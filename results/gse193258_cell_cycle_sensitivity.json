@@ -1,0 +1,459 @@
+{
+  "analysis": "exploratory_cell_cycle_marker_ablation",
+  "source_dataset": "GSE193258",
+  "samples": 36,
+  "genes": 18013,
+  "marker_panel": {
+    "description": "Fixed 30-gene illustrative subset, not the full Hallmark G2M signature",
+    "source_url": "https://pscb.stjude.org/pscb/GEP_reports/human/GSE137804/gepSummaryKnitr_8.html",
+    "requested": 30,
+    "present": 30,
+    "genes": [
+      "AURKA",
+      "BIRC5",
+      "BUB1",
+      "CCNA2",
+      "CCNB2",
+      "CDC20",
+      "CDK1",
+      "CDKN3",
+      "CENPA",
+      "CENPE",
+      "CENPF",
+      "CKS1B",
+      "CKS2",
+      "HMMR",
+      "KIF23",
+      "KIF2C",
+      "KPNA2",
+      "MKI67",
+      "NDC80",
+      "NEK2",
+      "NUSAP1",
+      "PBK",
+      "PLK1",
+      "PRC1",
+      "PTTG1",
+      "TOP2A",
+      "TPX2",
+      "TROAP",
+      "TTK",
+      "UBE2C"
+    ]
+  },
+  "evaluation": "leave-one-cell-line-out, source only",
+  "baseline_predictions_reproduced": true,
+  "baseline_500_genes": {
+    "balanced_accuracy": 0.9166666666666666,
+    "macro_f1": 0.9165217391304347
+  },
+  "without_marker_panel": {
+    "balanced_accuracy": 0.9166666666666666,
+    "macro_f1": 0.9165217391304347
+  },
+  "variance_matched_random_removals": {
+    "iterations": 5,
+    "removed_genes_per_fold": 30,
+    "scores": [
+      {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347
+      },
+      {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347
+      },
+      {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347
+      },
+      {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347
+      },
+      {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347
+      }
+    ]
+  },
+  "folds": [
+    {
+      "held_out_cell_line": "H1975",
+      "baseline": {
+        "balanced_accuracy": 0.8888888888888888,
+        "macro_f1": 0.8857142857142857
+      },
+      "without_marker_panel": {
+        "balanced_accuracy": 0.8888888888888888,
+        "macro_f1": 0.8857142857142857
+      },
+      "selected_panel_markers_in_baseline": [
+        "AURKA",
+        "BIRC5",
+        "CCNA2",
+        "CCNB2",
+        "CDK1",
+        "CDKN3",
+        "CENPA",
+        "CENPE",
+        "CKS1B",
+        "CKS2",
+        "KIF23",
+        "KPNA2",
+        "MKI67",
+        "NDC80",
+        "NEK2",
+        "PBK",
+        "PLK1",
+        "PRC1",
+        "TPX2",
+        "TTK",
+        "UBE2C"
+      ],
+      "predictions": [
+        {
+          "gsm": "GSM5778002",
+          "true_state": "Acute",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778003",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778004",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5777996",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5777997",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5777998",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778005",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778006",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778007",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        }
+      ]
+    },
+    {
+      "held_out_cell_line": "HCC2935",
+      "baseline": {
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "without_marker_panel": {
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "selected_panel_markers_in_baseline": [
+        "AURKA",
+        "BIRC5",
+        "BUB1",
+        "CCNA2",
+        "CCNB2",
+        "CDC20",
+        "CDK1",
+        "CDKN3",
+        "CENPA",
+        "CENPE",
+        "CKS1B",
+        "CKS2",
+        "HMMR",
+        "KIF23",
+        "KPNA2",
+        "MKI67",
+        "NUSAP1",
+        "PBK",
+        "PLK1",
+        "PRC1",
+        "PTTG1",
+        "TPX2",
+        "TTK",
+        "UBE2C"
+      ],
+      "predictions": [
+        {
+          "gsm": "GSM5778017",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778018",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778019",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778011",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778012",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778013",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778020",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778021",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778022",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        }
+      ]
+    },
+    {
+      "held_out_cell_line": "HCC827",
+      "baseline": {
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "without_marker_panel": {
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "selected_panel_markers_in_baseline": [
+        "AURKA",
+        "BIRC5",
+        "BUB1",
+        "CCNA2",
+        "CDK1",
+        "CDKN3",
+        "CENPA",
+        "CENPE",
+        "CKS1B",
+        "KIF23",
+        "KPNA2",
+        "MKI67",
+        "NDC80",
+        "PRC1",
+        "TOP2A",
+        "TPX2",
+        "TTK",
+        "UBE2C"
+      ],
+      "predictions": [
+        {
+          "gsm": "GSM5778032",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778033",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778034",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778026",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778027",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778028",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778035",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778036",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        },
+        {
+          "gsm": "GSM5778037",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        }
+      ]
+    },
+    {
+      "held_out_cell_line": "PC9",
+      "baseline": {
+        "balanced_accuracy": 0.7777777777777778,
+        "macro_f1": 0.75
+      },
+      "without_marker_panel": {
+        "balanced_accuracy": 0.7777777777777778,
+        "macro_f1": 0.75
+      },
+      "selected_panel_markers_in_baseline": [
+        "AURKA",
+        "BIRC5",
+        "BUB1",
+        "CCNA2",
+        "CCNB2",
+        "CDK1",
+        "CDKN3",
+        "CENPA",
+        "CENPE",
+        "CENPF",
+        "CKS1B",
+        "CKS2",
+        "KIF23",
+        "KPNA2",
+        "MKI67",
+        "NDC80",
+        "NEK2",
+        "NUSAP1",
+        "PBK",
+        "PLK1",
+        "PRC1",
+        "PTTG1",
+        "TOP2A",
+        "TPX2",
+        "TTK",
+        "UBE2C"
+      ],
+      "predictions": [
+        {
+          "gsm": "GSM5778047",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778048",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778049",
+          "true_state": "Acute",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778041",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778042",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778043",
+          "true_state": "Control",
+          "baseline": "Control",
+          "without_panel": "Control"
+        },
+        {
+          "gsm": "GSM5778050",
+          "true_state": "DTP",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778051",
+          "true_state": "DTP",
+          "baseline": "Acute",
+          "without_panel": "Acute"
+        },
+        {
+          "gsm": "GSM5778052",
+          "true_state": "DTP",
+          "baseline": "DTP",
+          "without_panel": "DTP"
+        }
+      ]
+    }
+  ],
+  "selected_gene_stability_mean_jaccard": {
+    "baseline": 0.38413886424034266,
+    "without_marker_panel": 0.3796857307072447
+  },
+  "limitations": [
+    "Only a limited marker panel is tested, not all cell-cycle-associated genes.",
+    "Removing marker genes cannot remove all cell-cycle information or establish causality.",
+    "Random controls are matched approximately by training-fold gene variance.",
+    "The same LOCO samples were inspected in stages 09-11; these are post-hoc diagnostics.",
+    "No GSE255958 samples are used; no external generalization claim is made here.",
+    "Biological replicates and labels still require manual scientific confirmation."
+  ]
+}
