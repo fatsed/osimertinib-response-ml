@@ -1,0 +1,352 @@
+{
+  "analysis": "post_hoc_held_out_study_prediction_diagnostics",
+  "source": "GSE193258",
+  "target": "GSE255958",
+  "classes_in_order": [
+    "Control",
+    "Acute",
+    "DTP"
+  ],
+  "input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "gse255958_common_log2tpm_candidate.tsv.gz": "e7c6a01cc20c83624e5eea7f4d585246870d2169d541a69f02e484f7b331f73b",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33"
+  },
+  "sample_counts": {
+    "source_training": 36,
+    "target_evaluated": 9,
+    "target_resistant_excluded": 3
+  },
+  "reproduces_stage_09_target_predictions": true,
+  "model_metrics": {
+    "Dummy": {
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.16666666666666666,
+      "confusion_matrix": [
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "correct": 3,
+      "total": 9
+    },
+    "LogisticRegression": {
+      "balanced_accuracy": 0.8888888888888888,
+      "macro_f1": 0.8857142857142858,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "correct": 8,
+      "total": 9
+    },
+    "LinearSVM": {
+      "balanced_accuracy": 0.8888888888888888,
+      "macro_f1": 0.8857142857142858,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "correct": 8,
+      "total": 9
+    }
+  },
+  "logistic_source_pc9_loco_reference": {
+    "balanced_accuracy": 0.7777777777777778,
+    "macro_f1": 0.75,
+    "n": 9,
+    "note": "Different training design: PC9 excluded from training in this fold"
+  },
+  "lr_svm_agreement": {
+    "agree": 9,
+    "total": 9
+  },
+  "by_true_state": {
+    "Control": {
+      "n": 3,
+      "logistic_correct": 3,
+      "mean_dtp_minus_acute_probability": 0.0012368133367659493
+    },
+    "Acute": {
+      "n": 3,
+      "logistic_correct": 3,
+      "mean_dtp_minus_acute_probability": -0.9991374027676971
+    },
+    "DTP": {
+      "n": 3,
+      "logistic_correct": 2,
+      "mean_dtp_minus_acute_probability": 0.15764770037844628
+    }
+  },
+  "source_protocol_as_recorded": {
+    "Control": [
+      "DMSO"
+    ],
+    "Acute": [
+      "osimertinib acute 24 hrs."
+    ],
+    "DTP": [
+      "osimertinib DTPs 3w."
+    ]
+  },
+  "target_protocol_as_recorded": {
+    "Control": [
+      "untreated 0.1% DMSO"
+    ],
+    "Acute": [
+      "Osimertinib 2 uM 48h"
+    ],
+    "DTP": [
+      "Osimertinib 2 uM 9d"
+    ]
+  },
+  "samples": [
+    {
+      "gsm": "GSM8083374",
+      "true_state": "Control",
+      "treatment": "untreated 0.1% DMSO",
+      "sample_title": "PC9 ctrl 48h rep 1",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Control",
+        "LinearSVM": "Control"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 0.9988841932374898,
+        "Acute": 3.667972782752268e-05,
+        "DTP": 0.0010791270346826097
+      },
+      "logistic_max_probability_uncalibrated": 0.9988841932374898,
+      "logistic_top_two_probability_gap": 0.9978050662028072,
+      "logistic_dtp_minus_acute_probability": 0.001042447306855087,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083375",
+      "true_state": "Control",
+      "treatment": "untreated 0.1% DMSO",
+      "sample_title": "PC9 ctrl 48h rep 2",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Control",
+        "LinearSVM": "Control"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 0.9987490617878901,
+        "Acute": 7.915679435353472e-05,
+        "DTP": 0.0011717814177563603
+      },
+      "logistic_max_probability_uncalibrated": 0.9987490617878901,
+      "logistic_top_two_probability_gap": 0.9975772803701338,
+      "logistic_dtp_minus_acute_probability": 0.0010926246234028256,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083376",
+      "true_state": "Control",
+      "treatment": "untreated 0.1% DMSO",
+      "sample_title": "PC9 ctrl 48h rep 3",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Control",
+        "LinearSVM": "Control"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 0.9982308322867038,
+        "Acute": 9.689981662818666e-05,
+        "DTP": 0.0016722678966681218
+      },
+      "logistic_max_probability_uncalibrated": 0.9982308322867038,
+      "logistic_top_two_probability_gap": 0.9965585643900358,
+      "logistic_dtp_minus_acute_probability": 0.0015753680800399351,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083377",
+      "true_state": "Acute",
+      "treatment": "Osimertinib 2 uM 48h",
+      "sample_title": "PC9 Osim 48h rep 1",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Acute",
+        "LinearSVM": "Acute"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 4.414148344067358e-07,
+        "Acute": 0.9993733682952876,
+        "DTP": 0.0006261902898780595
+      },
+      "logistic_max_probability_uncalibrated": 0.9993733682952876,
+      "logistic_top_two_probability_gap": 0.9987471780054095,
+      "logistic_dtp_minus_acute_probability": -0.9987471780054095,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083378",
+      "true_state": "Acute",
+      "treatment": "Osimertinib 2 uM 48h",
+      "sample_title": "PC9 Osim 48h rep 2",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Acute",
+        "LinearSVM": "Acute"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 2.8970460490936613e-07,
+        "Acute": 0.9996201629847111,
+        "DTP": 0.0003795473106838612
+      },
+      "logistic_max_probability_uncalibrated": 0.9996201629847111,
+      "logistic_top_two_probability_gap": 0.9992406156740272,
+      "logistic_dtp_minus_acute_probability": -0.9992406156740272,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083379",
+      "true_state": "Acute",
+      "treatment": "Osimertinib 2 uM 48h",
+      "sample_title": "PC9 Osim 48h rep 3",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Acute",
+        "LinearSVM": "Acute"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 2.3504723723677325e-07,
+        "Acute": 0.9997120897882087,
+        "DTP": 0.00028767516455395975
+      },
+      "logistic_max_probability_uncalibrated": 0.9997120897882087,
+      "logistic_top_two_probability_gap": 0.9994244146236547,
+      "logistic_dtp_minus_acute_probability": -0.9994244146236547,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083380",
+      "true_state": "DTP",
+      "treatment": "Osimertinib 2 uM 9d",
+      "sample_title": "PC9 Osim 9d rep 1",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "DTP",
+        "LinearSVM": "DTP"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 0.004377936456183403,
+        "Acute": 0.34252271168469584,
+        "DTP": 0.6530993518591208
+      },
+      "logistic_max_probability_uncalibrated": 0.6530993518591208,
+      "logistic_top_two_probability_gap": 0.310576640174425,
+      "logistic_dtp_minus_acute_probability": 0.310576640174425,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083381",
+      "true_state": "DTP",
+      "treatment": "Osimertinib 2 uM 9d",
+      "sample_title": "PC9 Osim 9d rep 2",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "DTP",
+        "LinearSVM": "DTP"
+      },
+      "logistic_correct": true,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 0.0036238226827804082,
+        "Acute": 0.29238244719060835,
+        "DTP": 0.7039937301266113
+      },
+      "logistic_max_probability_uncalibrated": 0.7039937301266113,
+      "logistic_top_two_probability_gap": 0.4116112829360029,
+      "logistic_dtp_minus_acute_probability": 0.4116112829360029,
+      "lr_svm_agree": true
+    },
+    {
+      "gsm": "GSM8083382",
+      "true_state": "DTP",
+      "treatment": "Osimertinib 2 uM 9d",
+      "sample_title": "PC9 Osim 9d rep 3",
+      "label_review": "PENDING_MANUAL_AND_MATRIX_CHECK",
+      "predictions": {
+        "Dummy": "Acute",
+        "LogisticRegression": "Acute",
+        "LinearSVM": "Acute"
+      },
+      "logistic_correct": false,
+      "logistic_probabilities_uncalibrated": {
+        "Control": 0.003123863147945951,
+        "Acute": 0.6230604794135716,
+        "DTP": 0.3738156574384825
+      },
+      "logistic_max_probability_uncalibrated": 0.6230604794135716,
+      "logistic_top_two_probability_gap": 0.24924482197508907,
+      "logistic_dtp_minus_acute_probability": -0.24924482197508907,
+      "lr_svm_agree": true
+    }
+  ],
+  "limitations": [
+    "These nine target samples were already examined in stage 09; this is diagnostic follow-up, not a new untouched external test.",
+    "All target samples are PC9, a cell line represented in full source training.",
+    "The protocol and time on osimertinib differ between studies; nominal labels may not be biologically equivalent.",
+    "LogisticRegression.predict_proba values are uncalibrated; high scores do not establish reliable probabilities.",
+    "The study contains only three target samples per class and biological independence is not established.",
+    "Sample label_review entries have not been manually scientifically validated.",
+    "No target labels or expression values were used for model fitting or supervised feature selection.",
+    "No models were selected, calibrated or tuned based on target results.",
+    "DTP-specific biology cannot be inferred from these classifications."
+  ]
+}
