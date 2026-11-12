@@ -1,0 +1,8 @@
+geo_accession,source_url,status,review_note
+GSE193258,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193258,candidate,Verify sample groups and expression scale
+GSE255958,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE255958,candidate,Select and verify relevant osimertinib groups
+GSE254485,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE254485,candidate,Audit temporal groups and independent replicates
+GSE202859,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE202859,candidate,Exclude unrelated perturbations or conditions
+GSE335846,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335846,candidate,Audit cell-cycle labels and time points
+GSE282074,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282074,candidate,Check cell-level versus sample-level independence
+GSE150949,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150949,candidate,Audit cell-level metadata and sample replication
