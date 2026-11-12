@@ -1,0 +1,383 @@
+{
+  "analysis": "GSE254485_exploratory_timecourse_expression_shifts",
+  "n_samples": 8,
+  "n_genes_filtered": 15855,
+  "cpm_filter": {
+    "minimum_cpm": 1.0,
+    "in_at_least_n_samples": 2
+  },
+  "expression_scale": "log2(CPM + 1) from library-size-normalized featureCounts; no composition correction",
+  "sample_days_and_treatments": {
+    "0": {
+      "samples": [
+        "GSM8043046",
+        "GSM8043047"
+      ],
+      "treatment": "No treatment"
+    },
+    "28": {
+      "samples": [
+        "GSM8043048",
+        "GSM8043049"
+      ],
+      "treatment": "Osimertinib"
+    },
+    "35": {
+      "samples": [
+        "GSM8043050",
+        "GSM8043051"
+      ],
+      "treatment": "Osimertinib"
+    },
+    "56": {
+      "samples": [
+        "GSM8043052",
+        "GSM8043053"
+      ],
+      "treatment": "Osimertinib"
+    }
+  },
+  "within_day_replicate_differences": {
+    "0": {
+      "median_abs_replicate_difference_log2cpm": 0.43490835327892885,
+      "rms_replicate_difference_log2cpm": 0.7133902146837084,
+      "pearson": 0.957674214641448
+    },
+    "28": {
+      "median_abs_replicate_difference_log2cpm": 0.13902790190843062,
+      "rms_replicate_difference_log2cpm": 0.23614407132031826,
+      "pearson": 0.9946663551845638
+    },
+    "35": {
+      "median_abs_replicate_difference_log2cpm": 0.1781101987581062,
+      "rms_replicate_difference_log2cpm": 0.3232140264917671,
+      "pearson": 0.9897677863093689
+    },
+    "56": {
+      "median_abs_replicate_difference_log2cpm": 0.18949978385015898,
+      "rms_replicate_difference_log2cpm": 0.29297665878966966,
+      "pearson": 0.9914911117063603
+    }
+  },
+  "median_within_day_replicate_difference_reference": 0.18380499130413258,
+  "contrasts": [
+    {
+      "start_day": 0,
+      "end_day": 28,
+      "comparison_type": "untreated_vs_treated",
+      "median_abs_mean_difference_log2cpm": 0.7892065969706095,
+      "rms_mean_difference_log2cpm": 1.3643797077793574,
+      "genes_with_abs_mean_difference_at_least_1": 6247,
+      "genes_with_nonoverlapping_replicate_ranges": 12340,
+      "exploratory_candidates_with_both_criteria": 6221,
+      "top_10_by_abs_mean_difference_among_candidates": [
+        {
+          "gene_id": "ALPP",
+          "mean_difference_log2cpm": 8.65534020604303,
+          "mean_log2cpm_start": 3.337109278752978,
+          "mean_log2cpm_end": 11.992449484796008,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "AXL",
+          "mean_difference_log2cpm": -8.041917830859159,
+          "mean_log2cpm_start": 8.193837688962994,
+          "mean_log2cpm_end": 0.15191985810383518,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "SEMA5A",
+          "mean_difference_log2cpm": 7.947150621304593,
+          "mean_log2cpm_start": 0.0,
+          "mean_log2cpm_end": 7.947150621304593,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "CAPN6",
+          "mean_difference_log2cpm": 7.302491518454671,
+          "mean_log2cpm_start": 0.0,
+          "mean_log2cpm_end": 7.302491518454671,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "KRT5",
+          "mean_difference_log2cpm": -6.866941871365787,
+          "mean_log2cpm_start": 7.035776805342207,
+          "mean_log2cpm_end": 0.16883493397642008,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "LAMA4",
+          "mean_difference_log2cpm": -6.8257048990360545,
+          "mean_log2cpm_start": 6.917382893437635,
+          "mean_log2cpm_end": 0.09167799440158012,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "EFHD1",
+          "mean_difference_log2cpm": 6.780749252705987,
+          "mean_log2cpm_start": 2.052466043589452,
+          "mean_log2cpm_end": 8.833215296295439,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "TP53I11",
+          "mean_difference_log2cpm": 6.740115582822947,
+          "mean_log2cpm_start": 0.4748258071171221,
+          "mean_log2cpm_end": 7.214941389940069,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "RHOV",
+          "mean_difference_log2cpm": 6.728588435645226,
+          "mean_log2cpm_start": 0.9175399562152178,
+          "mean_log2cpm_end": 7.646128391860444,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "WNT6",
+          "mean_difference_log2cpm": 6.718514209458508,
+          "mean_log2cpm_start": 0.25386515039684626,
+          "mean_log2cpm_end": 6.9723793598553545,
+          "direction": "higher_at_end"
+        }
+      ]
+    },
+    {
+      "start_day": 28,
+      "end_day": 35,
+      "comparison_type": "within_treated_timepoints",
+      "median_abs_mean_difference_log2cpm": 0.12536507730668678,
+      "rms_mean_difference_log2cpm": 0.23364999371766546,
+      "genes_with_abs_mean_difference_at_least_1": 36,
+      "genes_with_nonoverlapping_replicate_ranges": 5951,
+      "exploratory_candidates_with_both_criteria": 32,
+      "top_10_by_abs_mean_difference_among_candidates": [
+        {
+          "gene_id": "SLC6A12",
+          "mean_difference_log2cpm": 1.9105958896073143,
+          "mean_log2cpm_start": 0.32474160243405903,
+          "mean_log2cpm_end": 2.2353374920413733,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "ZBED6CL",
+          "mean_difference_log2cpm": 1.592243852511535,
+          "mean_log2cpm_start": 4.089274089147615,
+          "mean_log2cpm_end": 5.68151794165915,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "CHRD",
+          "mean_difference_log2cpm": 1.58316877088237,
+          "mean_log2cpm_start": 4.443130350121876,
+          "mean_log2cpm_end": 6.0262991210042465,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "LOXL4",
+          "mean_difference_log2cpm": 1.4014305016892608,
+          "mean_log2cpm_start": 2.585844470400318,
+          "mean_log2cpm_end": 3.987274972089579,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "TGM2",
+          "mean_difference_log2cpm": -1.3807508490893783,
+          "mean_log2cpm_start": 5.4448801379324605,
+          "mean_log2cpm_end": 4.064129288843082,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "ASPM",
+          "mean_difference_log2cpm": -1.2913616795151128,
+          "mean_log2cpm_start": 4.766308613632322,
+          "mean_log2cpm_end": 3.4749469341172095,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "PGLYRP3",
+          "mean_difference_log2cpm": 1.2623146542803365,
+          "mean_log2cpm_start": 1.1869555672313319,
+          "mean_log2cpm_end": 2.4492702215116684,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "ITGA2",
+          "mean_difference_log2cpm": -1.2382735444212623,
+          "mean_log2cpm_start": 4.650411091038025,
+          "mean_log2cpm_end": 3.412137546616763,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "C3",
+          "mean_difference_log2cpm": -1.23088472820639,
+          "mean_log2cpm_start": 5.866230854047326,
+          "mean_log2cpm_end": 4.635346125840936,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "PDGFRB",
+          "mean_difference_log2cpm": 1.2209367084049978,
+          "mean_log2cpm_start": 1.3940632090491398,
+          "mean_log2cpm_end": 2.6149999174541376,
+          "direction": "higher_at_end"
+        }
+      ]
+    },
+    {
+      "start_day": 35,
+      "end_day": 56,
+      "comparison_type": "within_treated_timepoints",
+      "median_abs_mean_difference_log2cpm": 0.13508209032498697,
+      "rms_mean_difference_log2cpm": 0.21943255208476015,
+      "genes_with_abs_mean_difference_at_least_1": 8,
+      "genes_with_nonoverlapping_replicate_ranges": 5313,
+      "exploratory_candidates_with_both_criteria": 6,
+      "top_10_by_abs_mean_difference_among_candidates": [
+        {
+          "gene_id": "PDZK1IP1",
+          "mean_difference_log2cpm": 1.3420783052797653,
+          "mean_log2cpm_start": 2.9491003565549536,
+          "mean_log2cpm_end": 4.291178661834719,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "OAS2",
+          "mean_difference_log2cpm": 1.2399141357416454,
+          "mean_log2cpm_start": 0.3133798655059518,
+          "mean_log2cpm_end": 1.5532940012475973,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "KCNK3",
+          "mean_difference_log2cpm": -1.0500417016333286,
+          "mean_log2cpm_start": 3.215631175024837,
+          "mean_log2cpm_end": 2.1655894733915084,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "ASIC2",
+          "mean_difference_log2cpm": -1.0273454268731108,
+          "mean_log2cpm_start": 1.7018940950916461,
+          "mean_log2cpm_end": 0.6745486682185353,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "LIN7A",
+          "mean_difference_log2cpm": 1.0238324440704805,
+          "mean_log2cpm_start": 2.6452755932378,
+          "mean_log2cpm_end": 3.6691080373082805,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "ZMAT1",
+          "mean_difference_log2cpm": 1.005562559757263,
+          "mean_log2cpm_start": 0.35781255350449825,
+          "mean_log2cpm_end": 1.3633751132617613,
+          "direction": "higher_at_end"
+        }
+      ]
+    },
+    {
+      "start_day": 28,
+      "end_day": 56,
+      "comparison_type": "within_treated_timepoints",
+      "median_abs_mean_difference_log2cpm": 0.19021986030599214,
+      "rms_mean_difference_log2cpm": 0.32312849212415307,
+      "genes_with_abs_mean_difference_at_least_1": 168,
+      "genes_with_nonoverlapping_replicate_ranges": 8300,
+      "exploratory_candidates_with_both_criteria": 168,
+      "top_10_by_abs_mean_difference_among_candidates": [
+        {
+          "gene_id": "C1orf21",
+          "mean_difference_log2cpm": 1.8369986927750341,
+          "mean_log2cpm_start": 2.4921010698047503,
+          "mean_log2cpm_end": 4.3290997625797845,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "MKI67",
+          "mean_difference_log2cpm": -1.7933498691432552,
+          "mean_log2cpm_start": 6.037433441082839,
+          "mean_log2cpm_end": 4.2440835719395835,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "PRR11",
+          "mean_difference_log2cpm": -1.7700274603442292,
+          "mean_log2cpm_start": 3.920921675982677,
+          "mean_log2cpm_end": 2.1508942156384476,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "PGLYRP3",
+          "mean_difference_log2cpm": 1.698692602382963,
+          "mean_log2cpm_start": 1.1869555672313319,
+          "mean_log2cpm_end": 2.885648169614295,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "TOP2A",
+          "mean_difference_log2cpm": -1.6696409060612556,
+          "mean_log2cpm_start": 6.5697669480520755,
+          "mean_log2cpm_end": 4.90012604199082,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "EDNRB",
+          "mean_difference_log2cpm": 1.5806512039324794,
+          "mean_log2cpm_start": 1.4315611080749409,
+          "mean_log2cpm_end": 3.0122123120074202,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "CHRD",
+          "mean_difference_log2cpm": 1.5615733007472965,
+          "mean_log2cpm_start": 4.443130350121876,
+          "mean_log2cpm_end": 6.004703650869173,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "CCNA2",
+          "mean_difference_log2cpm": -1.5544266226951962,
+          "mean_log2cpm_start": 4.994050200127926,
+          "mean_log2cpm_end": 3.43962357743273,
+          "direction": "lower_at_end"
+        },
+        {
+          "gene_id": "PDZK1IP1",
+          "mean_difference_log2cpm": 1.534141944070785,
+          "mean_log2cpm_start": 2.757036717763934,
+          "mean_log2cpm_end": 4.291178661834719,
+          "direction": "higher_at_end"
+        },
+        {
+          "gene_id": "LIPG",
+          "mean_difference_log2cpm": -1.5100197916361702,
+          "mean_log2cpm_start": 4.402184626898628,
+          "mean_log2cpm_end": 2.892164835262458,
+          "direction": "lower_at_end"
+        }
+      ]
+    }
+  ],
+  "labels_verified": false,
+  "supervised_model_trained": false,
+  "inferential_statistics_performed": false,
+  "limitations": [
+    "Sample aliases and biological replicate independence have not been manually verified.",
+    "Only two candidate samples per day; selected genes are exploratory, not statistically significant DEGs.",
+    "Day 0 is untreated but later days are treated; treatment and elapsed time are confounded.",
+    "Comparisons are unpaired; replicate numbers across days are not confirmed matched longitudinal samples.",
+    "CPM may retain RNA-composition biases; differences in mean log2(CPM+1) are not formal log2 fold changes.",
+    "Selection by effect size and non-overlapping two-replicate ranges is descriptive, not a hypothesis test.",
+    "No DTP or resistance phenotypes are inferred from these time points."
+  ],
+  "input_sha256": {
+    "data/processed/GSE254485/counts_timecourse_candidate.tsv.gz": "398514e15ce3f037cab8611ccd197ccfca37fc9df417ad916df1470eeda8ea52",
+    "data/processed/GSE254485/samples_timecourse_candidate.csv": "5b14f8070c2df39dd466bd8cb7e589629f7a239edfb1bad58ba2958d268d438c"
+  },
+  "stage_16_source_sha256": "215ad887767f365c709494cde2869dd8af41d535b9a5e2424b9303d863784538",
+  "figure": "figures/gse254485_timecourse_distances.png"
+}
