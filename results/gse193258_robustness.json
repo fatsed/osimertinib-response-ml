@@ -1,0 +1,267 @@
+{
+  "analysis": "post_baseline_source_only_robustness_diagnostics",
+  "source": "GSE193258",
+  "samples": 36,
+  "genes": 18013,
+  "baseline_predictions_reproduced": true,
+  "multiclass_logistic_regression": {
+    "feature_count_sensitivity": {
+      "50": {
+        "balanced_accuracy": 0.888888888888889,
+        "macro_f1": 0.888888888888889
+      },
+      "200": {
+        "balanced_accuracy": 0.9444444444444443,
+        "macro_f1": 0.9444444444444443
+      },
+      "500": {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347
+      },
+      "1000": {
+        "balanced_accuracy": 0.8888888888888888,
+        "macro_f1": 0.8881118881118882
+      }
+    },
+    "selected_gene_jaccard_between_training_folds": {
+      "50": 0.16140804515185417,
+      "200": 0.31797600002268434,
+      "500": 0.38413886424034266,
+      "1000": 0.40577679954225787
+    },
+    "baseline_500_gene_errors": [
+      {
+        "held_out_cell_line": "H1975",
+        "gsm": "GSM5778002",
+        "true_state": "Acute",
+        "predicted_state": "DTP"
+      },
+      {
+        "held_out_cell_line": "PC9",
+        "gsm": "GSM5778050",
+        "true_state": "DTP",
+        "predicted_state": "Acute"
+      },
+      {
+        "held_out_cell_line": "PC9",
+        "gsm": "GSM5778051",
+        "true_state": "DTP",
+        "predicted_state": "Acute"
+      }
+    ]
+  },
+  "acute_vs_dtp_only": {
+    "meaning": "Drug-exposed groups only; no untreated controls",
+    "feature_count": 500,
+    "balanced_accuracy": 0.7916666666666667,
+    "macro_f1": 0.791304347826087,
+    "confusion_matrix": [
+      [
+        10,
+        2
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "folds": [
+      {
+        "balanced_accuracy": 0.6666666666666666,
+        "macro_f1": 0.625,
+        "confusion_matrix": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "held_out_cell_line": "H1975",
+        "predictions": [
+          {
+            "gsm": "GSM5778002",
+            "true_state": "Acute",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778003",
+            "true_state": "Acute",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778004",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778005",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778006",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778007",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          }
+        ]
+      },
+      {
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "confusion_matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "held_out_cell_line": "HCC2935",
+        "predictions": [
+          {
+            "gsm": "GSM5778017",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778018",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778019",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778020",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778021",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778022",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          }
+        ]
+      },
+      {
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "confusion_matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "held_out_cell_line": "HCC827",
+        "predictions": [
+          {
+            "gsm": "GSM5778032",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778033",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778034",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778035",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778036",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM5778037",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          }
+        ]
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "confusion_matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "held_out_cell_line": "PC9",
+        "predictions": [
+          {
+            "gsm": "GSM5778047",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778048",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778049",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778050",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778051",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM5778052",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          }
+        ]
+      }
+    ]
+  },
+  "cautions": [
+    "These analyses revisit LOCO test folds after observing baseline results.",
+    "Feature-count comparisons are sensitivity analyses, not hyperparameter tuning.",
+    "Do not choose the best feature count using these results and then report its LOCO score as an untouched test result.",
+    "No GSE255958 expression values or labels are used in this script.",
+    "Acute-versus-DTP classification does not establish DTP-specific biology because treatment duration and other factors differ.",
+    "Biological replicate independence and treatment labels require study review."
+  ]
+}
