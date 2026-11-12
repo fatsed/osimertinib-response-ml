@@ -1,0 +1,195 @@
+{
+  "source_study": "GSE193258",
+  "target_study": "GSE255958",
+  "source_genes": 19712,
+  "target_samples": 12,
+  "groups": {
+    "Acute": 3,
+    "Control": 3,
+    "DTP": 3,
+    "Resistant": 3
+  },
+  "normalization_rule": "X_X becomes X only when both parts are exactly identical",
+  "source_gene_id_examples": [
+    "A1BG",
+    "A1CF",
+    "A2M",
+    "A2ML1",
+    "A3GALT2",
+    "A4GALT"
+  ],
+  "samples": [
+    {
+      "gsm": "GSM8083374",
+      "group": "Control",
+      "file": "GSM8083374_PC9_D_1.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 10357
+    },
+    {
+      "gsm": "GSM8083375",
+      "group": "Control",
+      "file": "GSM8083375_PC9_D_2.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 10347
+    },
+    {
+      "gsm": "GSM8083376",
+      "group": "Control",
+      "file": "GSM8083376_PC9_D_3.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 10391
+    },
+    {
+      "gsm": "GSM8083377",
+      "group": "Acute",
+      "file": "GSM8083377_PC9_O2_1.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 10014
+    },
+    {
+      "gsm": "GSM8083378",
+      "group": "Acute",
+      "file": "GSM8083378_PC9_O2_2.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 9666
+    },
+    {
+      "gsm": "GSM8083379",
+      "group": "Acute",
+      "file": "GSM8083379_PC9_O2_3.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 9919
+    },
+    {
+      "gsm": "GSM8083380",
+      "group": "DTP",
+      "file": "GSM8083380_PC9_O9_1.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 9832
+    },
+    {
+      "gsm": "GSM8083381",
+      "group": "DTP",
+      "file": "GSM8083381_PC9_O9_2.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 10031
+    },
+    {
+      "gsm": "GSM8083382",
+      "group": "DTP",
+      "file": "GSM8083382_PC9_O9_3.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 10126
+    },
+    {
+      "gsm": "GSM8083383",
+      "group": "Resistant",
+      "file": "GSM8083383_PC9_d47_1.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 9507
+    },
+    {
+      "gsm": "GSM8083384",
+      "group": "Resistant",
+      "file": "GSM8083384_PC9_d47_2.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 9550
+    },
+    {
+      "gsm": "GSM8083385",
+      "group": "Resistant",
+      "file": "GSM8083385_PC9_d47_3.genes.results.gz",
+      "target_genes": 26334,
+      "ids_normalized": 26334,
+      "ids_excluded_due_to_normalization_collisions": 0,
+      "overlap_before_normalization": 0,
+      "overlap_with_source": 18013,
+      "zero_tpm_genes": 9665
+    }
+  ],
+  "target_gene_id_examples": [
+    "A1BG_A1BG",
+    "A1BG-AS1_A1BG-AS1",
+    "A1CF_A1CF",
+    "A2M_A2M",
+    "A2M-AS1_A2M-AS1",
+    "A2ML1_A2ML1"
+  ],
+  "normalization_examples": [
+    {
+      "before": "A1BG_A1BG",
+      "after": "A1BG"
+    },
+    {
+      "before": "A1BG-AS1_A1BG-AS1",
+      "after": "A1BG-AS1"
+    },
+    {
+      "before": "A1CF_A1CF",
+      "after": "A1CF"
+    },
+    {
+      "before": "A2M_A2M",
+      "after": "A2M"
+    },
+    {
+      "before": "A2M-AS1_A2M-AS1",
+      "after": "A2M-AS1"
+    },
+    {
+      "before": "A2ML1_A2ML1",
+      "after": "A2ML1"
+    }
+  ],
+  "genes_shared_by_all_12_and_source": 18013,
+  "source_to_target_shared_fraction": 0.9138,
+  "all_target_gene_sets_identical": true,
+  "all_normalized_gene_sets_identical": true,
+  "status": "gene_names_overlap_found",
+  "interpretation": "Matching gene names alone does not verify expression-scale compatibility, sample labels, treatment comparability, independence, or cross-study prediction validity. Any identifiers that collide after normalization are excluded, not merged."
+}
