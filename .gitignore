@@ -50,3 +50,4 @@ Thumbs.db
 # Local GEO audit outputs
 /data/metadata/geo_downloads.json
 /data/metadata/audit/
+/data/metadata/review/
