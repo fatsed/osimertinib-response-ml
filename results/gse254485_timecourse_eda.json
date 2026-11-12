@@ -1,0 +1,125 @@
+{
+  "analysis": "exploratory_GSE254485_timecourse_qc_and_pca",
+  "source_study": "GSE254485",
+  "input_sha256": {
+    "data/processed/GSE254485/counts_timecourse_candidate.tsv.gz": "398514e15ce3f037cab8611ccd197ccfca37fc9df417ad916df1470eeda8ea52",
+    "data/processed/GSE254485/samples_timecourse_candidate.csv": "5b14f8070c2df39dd466bd8cb7e589629f7a239edfb1bad58ba2958d268d438c"
+  },
+  "n_samples": 8,
+  "n_genes_raw": 56609,
+  "n_genes_passing_cpm_filter": 15855,
+  "filter": {
+    "minimum_cpm": 1.0,
+    "in_at_least_n_samples": 2
+  },
+  "normalization": "library-size CPM followed by log2(CPM + 1); exploratory, not TMM/DESeq2",
+  "pca_top_variable_genes": 2000,
+  "pca_explained_variance_ratio": [
+    0.9502809891660376,
+    0.023837816019461867
+  ],
+  "pca_input": "top-variance filtered logCPM genes, centered by PCA; no class supervision",
+  "library_size_max_min_ratio": 1.4868803715365562,
+  "within_day_logcpm_pearson": {
+    "0": 0.957674214641448,
+    "28": 0.9946663551845641,
+    "35": 0.9897677863093692,
+    "56": 0.9914911117063601
+  },
+  "samples": [
+    {
+      "gsm": "GSM8043046",
+      "day": 0,
+      "replicate_label": 1,
+      "treatment": "No treatment",
+      "library_size": 26118496,
+      "detected_genes": 19702,
+      "pca_pc1": -115.99432134881748,
+      "pca_pc2": -17.358936610786326
+    },
+    {
+      "gsm": "GSM8043047",
+      "day": 0,
+      "replicate_label": 2,
+      "treatment": "No treatment",
+      "library_size": 23707267,
+      "detected_genes": 23657,
+      "pca_pc1": -92.53068363229139,
+      "pca_pc2": 20.436103377273668
+    },
+    {
+      "gsm": "GSM8043048",
+      "day": 28,
+      "replicate_label": 1,
+      "treatment": "Osimertinib",
+      "library_size": 19975560,
+      "detected_genes": 23906,
+      "pca_pc1": 30.81982880763434,
+      "pca_pc2": 1.6455161713383744
+    },
+    {
+      "gsm": "GSM8043049",
+      "day": 28,
+      "replicate_label": 2,
+      "treatment": "Osimertinib",
+      "library_size": 24574019,
+      "detected_genes": 24466,
+      "pca_pc1": 26.757697886779216,
+      "pca_pc2": -0.5668256570677795
+    },
+    {
+      "gsm": "GSM8043050",
+      "day": 35,
+      "replicate_label": 1,
+      "treatment": "Osimertinib",
+      "library_size": 23292974,
+      "detected_genes": 24701,
+      "pca_pc1": 34.39210623836151,
+      "pca_pc2": 0.186525245499649
+    },
+    {
+      "gsm": "GSM8043051",
+      "day": 35,
+      "replicate_label": 2,
+      "treatment": "Osimertinib",
+      "library_size": 24905479,
+      "detected_genes": 24892,
+      "pca_pc1": 39.73749653045549,
+      "pca_pc2": -0.3805194917854019
+    },
+    {
+      "gsm": "GSM8043052",
+      "day": 56,
+      "replicate_label": 1,
+      "treatment": "Osimertinib",
+      "library_size": 17565970,
+      "detected_genes": 24186,
+      "pca_pc1": 39.127166442141565,
+      "pca_pc2": -0.06105944189615056
+    },
+    {
+      "gsm": "GSM8043053",
+      "day": 56,
+      "replicate_label": 2,
+      "treatment": "Osimertinib",
+      "library_size": 23366444,
+      "detected_genes": 24403,
+      "pca_pc1": 37.69070907573693,
+      "pca_pc2": -3.900803592575987
+    }
+  ],
+  "plots": [
+    "figures/qc_gse254485_library_sizes.png",
+    "figures/pca_gse254485_timecourse.png"
+  ],
+  "labels_verified": false,
+  "supervised_model_trained": false,
+  "limitations": [
+    "Expression-column aliases and biological-replicate independence require manual verification.",
+    "Two samples per time point are insufficient for strong inferential claims.",
+    "No differential expression tests, response-state labels, or resistance predictions are performed.",
+    "Day 0 is untreated while later time points are treated, so treatment and time are confounded.",
+    "PCA is descriptive and sensitive to gene selection, normalization, and technical effects.",
+    "CPM does not correct RNA composition bias; counts must not be compared directly with log2TPM from another study."
+  ]
+}
