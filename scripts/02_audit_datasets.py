@@ -22,7 +22,7 @@ MAX_LINE_BYTES = 4 * 1024 * 1024  # bounded preview for extremely wide count mat
 # Only explicitly provided sample-characteristic keys are used here.
 # Values are copied without translating, categorizing, or inferring them.
 KEYS = {
-    "explicit_cell_line": {"cell line", "cell_line", "cellline", "cell type"},
+    "explicit_cell_line": {"cell line", "cell_line", "cellline"},
     "explicit_treatment": {"treatment", "drug treatment", "drug", "treatment condition", "compound"},
     "explicit_exposure_time": {"treatment duration", "exposure time", "treatment time", "timepoint", "time point", "duration"},
     "explicit_state": {"state", "cell state", "treatment state", "condition", "phenotype"},
