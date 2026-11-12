@@ -1,0 +1,16 @@
+{
+  "accession": "GSE193258",
+  "analysis": "exploratory_only_not_external_validation",
+  "input_matrix": "log2tpm_36samples.tsv.gz",
+  "n_samples": 36,
+  "n_genes_total": 19712,
+  "n_genes_variable": 19708,
+  "n_genes_in_pca": 2000,
+  "pca_pc1_explained_percent": 33.17538596935445,
+  "pca_pc2_explained_percent": 27.102583198217754,
+  "mean_correlation_same_cell_line": 0.840435535058083,
+  "mean_correlation_different_cell_line": 0.2206497869877848,
+  "mean_correlation_same_state": 0.35875158440386884,
+  "mean_correlation_different_state": 0.3639483791955123,
+  "note": "All samples are used for descriptive EDA. Do not reuse this PCA or feature selection in held-out model evaluation. Sample labels still require scientific review."
+}
