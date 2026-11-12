@@ -1,0 +1,1173 @@
+{
+  "input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "gse255958_common_log2tpm_candidate.tsv.gz": "e7c6a01cc20c83624e5eea7f4d585246870d2169d541a69f02e484f7b331f73b",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33"
+  },
+  "scikit_learn_version": "1.9.1",
+  "generated_utc": "2026-11-12T16:53:16.350683+00:00",
+  "purpose": "fixed-parameter exploratory baselines, not validated clinical prediction",
+  "source": "GSE193258",
+  "target": "GSE255958",
+  "gene_count": 18013,
+  "source_samples": 36,
+  "external_target_samples": 9,
+  "classes_in_order": [
+    "Control",
+    "Acute",
+    "DTP"
+  ],
+  "fixed_seed": 42,
+  "supervised_feature_count": 500,
+  "source_evaluation": "leave-one-cell-line-out; train on 3 cell lines, test on 1",
+  "target_evaluation": "exploratory held-out-study transfer with PC9 represented in source",
+  "notes": [
+    "All supervised feature selection, variance filtering, and scaling are fit inside each training fold.",
+    "No PCA features from step 06 are used.",
+    "Hyperparameters are fixed in advance; there is no tuning on test folds or target labels.",
+    "Source and target treatment dose/duration differ; matching state names do not establish biological equivalence.",
+    "Sample labels and biological replicate independence remain pending source-study review.",
+    "The target study contains PC9, also present in training; this is not novel-cell-line validation.",
+    "Only Control, Acute and DTP are evaluated; Resistant samples remain excluded.",
+    "Common gene identities were aligned using both studies before training, not using target outcome labels."
+  ],
+  "models": {
+    "Dummy": {
+      "loco_folds": [
+        {
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ],
+          "held_out_cell_line": "H1975",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778002",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778003",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778004",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5777996",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5777997",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5777998",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778005",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778006",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778007",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ],
+          "held_out_cell_line": "HCC2935",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778017",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778018",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778019",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778011",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778012",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778013",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778020",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778021",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778022",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ],
+          "held_out_cell_line": "HCC827",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778032",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778033",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778034",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778026",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778027",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778028",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778035",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778036",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778037",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ],
+          "held_out_cell_line": "PC9",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778047",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778048",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778049",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778041",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778042",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778043",
+              "true_state": "Control",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778050",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778051",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778052",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            }
+          ]
+        }
+      ],
+      "loco_pooled": {
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.16666666666666666,
+        "confusion_matrix": [
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ]
+        ]
+      },
+      "loco_mean_balanced_accuracy": 0.3333333333333333,
+      "loco_mean_macro_f1": 0.16666666666666666,
+      "target_exploratory": {
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.16666666666666666,
+        "confusion_matrix": [
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            3,
+            0
+          ]
+        ],
+        "predictions": [
+          {
+            "gsm": "GSM8083374",
+            "true_state": "Control",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083375",
+            "true_state": "Control",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083376",
+            "true_state": "Control",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083377",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083378",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083379",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083380",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083381",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083382",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          }
+        ]
+      }
+    },
+    "LogisticRegression": {
+      "loco_folds": [
+        {
+          "balanced_accuracy": 0.8888888888888888,
+          "macro_f1": 0.8857142857142857,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ],
+          "held_out_cell_line": "H1975",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778002",
+              "true_state": "Acute",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778003",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778004",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5777996",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5777997",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5777998",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778005",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778006",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778007",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ],
+          "held_out_cell_line": "HCC2935",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778017",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778018",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778019",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778011",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778012",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778013",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778020",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778021",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778022",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ],
+          "held_out_cell_line": "HCC827",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778032",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778033",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778034",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778026",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778027",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778028",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778035",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778036",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778037",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 0.7777777777777778,
+          "macro_f1": 0.75,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ]
+          ],
+          "held_out_cell_line": "PC9",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778047",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778048",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778049",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778041",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778042",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778043",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778050",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778051",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778052",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        }
+      ],
+      "loco_pooled": {
+        "balanced_accuracy": 0.9166666666666666,
+        "macro_f1": 0.9165217391304347,
+        "confusion_matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            1
+          ],
+          [
+            0,
+            2,
+            10
+          ]
+        ]
+      },
+      "loco_mean_balanced_accuracy": 0.9166666666666666,
+      "loco_mean_macro_f1": 0.9089285714285714,
+      "target_exploratory": {
+        "balanced_accuracy": 0.8888888888888888,
+        "macro_f1": 0.8857142857142858,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "predictions": [
+          {
+            "gsm": "GSM8083374",
+            "true_state": "Control",
+            "predicted_state": "Control"
+          },
+          {
+            "gsm": "GSM8083375",
+            "true_state": "Control",
+            "predicted_state": "Control"
+          },
+          {
+            "gsm": "GSM8083376",
+            "true_state": "Control",
+            "predicted_state": "Control"
+          },
+          {
+            "gsm": "GSM8083377",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083378",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083379",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083380",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM8083381",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM8083382",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          }
+        ]
+      }
+    },
+    "LinearSVM": {
+      "loco_folds": [
+        {
+          "balanced_accuracy": 0.8888888888888888,
+          "macro_f1": 0.8857142857142857,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ],
+          "held_out_cell_line": "H1975",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778002",
+              "true_state": "Acute",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778003",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778004",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5777996",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5777997",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5777998",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778005",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778006",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778007",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ],
+          "held_out_cell_line": "HCC2935",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778017",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778018",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778019",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778011",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778012",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778013",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778020",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778021",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778022",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 0.8888888888888888,
+          "macro_f1": 0.8857142857142858,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "held_out_cell_line": "HCC827",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778032",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778033",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778034",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778026",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778027",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778028",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778035",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778036",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            },
+            {
+              "gsm": "GSM5778037",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            }
+          ]
+        },
+        {
+          "balanced_accuracy": 0.7777777777777778,
+          "macro_f1": 0.75,
+          "confusion_matrix": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ]
+          ],
+          "held_out_cell_line": "PC9",
+          "train_n": 27,
+          "test_n": 9,
+          "predictions": [
+            {
+              "gsm": "GSM5778047",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778048",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778049",
+              "true_state": "Acute",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778041",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778042",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778043",
+              "true_state": "Control",
+              "predicted_state": "Control"
+            },
+            {
+              "gsm": "GSM5778050",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778051",
+              "true_state": "DTP",
+              "predicted_state": "Acute"
+            },
+            {
+              "gsm": "GSM5778052",
+              "true_state": "DTP",
+              "predicted_state": "DTP"
+            }
+          ]
+        }
+      ],
+      "loco_pooled": {
+        "balanced_accuracy": 0.8888888888888888,
+        "macro_f1": 0.8881118881118882,
+        "confusion_matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            1
+          ],
+          [
+            0,
+            3,
+            9
+          ]
+        ]
+      },
+      "loco_mean_balanced_accuracy": 0.8888888888888888,
+      "loco_mean_macro_f1": 0.8803571428571428,
+      "target_exploratory": {
+        "balanced_accuracy": 0.8888888888888888,
+        "macro_f1": 0.8857142857142858,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "predictions": [
+          {
+            "gsm": "GSM8083374",
+            "true_state": "Control",
+            "predicted_state": "Control"
+          },
+          {
+            "gsm": "GSM8083375",
+            "true_state": "Control",
+            "predicted_state": "Control"
+          },
+          {
+            "gsm": "GSM8083376",
+            "true_state": "Control",
+            "predicted_state": "Control"
+          },
+          {
+            "gsm": "GSM8083377",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083378",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083379",
+            "true_state": "Acute",
+            "predicted_state": "Acute"
+          },
+          {
+            "gsm": "GSM8083380",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM8083381",
+            "true_state": "DTP",
+            "predicted_state": "DTP"
+          },
+          {
+            "gsm": "GSM8083382",
+            "true_state": "DTP",
+            "predicted_state": "Acute"
+          }
+        ]
+      }
+    }
+  }
+}
