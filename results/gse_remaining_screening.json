@@ -1,0 +1,232 @@
+{
+  "analysis": "stage_15_remaining_geo_screening",
+  "objective": "Rank future experiments; no data relabeling or model fitting",
+  "input_reports": [
+    "data/metadata/review/sample_review_queue.csv",
+    "data/metadata/mapping/sample_matrix_mapping.csv"
+  ],
+  "scientific_priority_is_provisional": true,
+  "datasets": [
+    {
+      "accession": "GSE254485",
+      "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE254485",
+      "provisional_priority": 1,
+      "potential_research_use": "Time-course and acquired-resistance analysis",
+      "assay": "bulk RNA-seq",
+      "geo_gsm_records": 22,
+      "review_role": "timecourse_candidate",
+      "records_in_review_role": 8,
+      "candidate_gsm_records": 8,
+      "candidate_group_counts": {
+        "Day_0": 2,
+        "Day_28": 2,
+        "Day_35": 2,
+        "Day_56": 2
+      },
+      "candidate_review_status_counts": {
+        "PENDING_MANUAL_AND_MATRIX_CHECK": 8
+      },
+      "candidate_review_flags": {},
+      "mapping_status_counts": {
+        "alias_candidate": 22
+      },
+      "candidate_gsm_with_preliminary_mapping": 8,
+      "local_file_checks": [
+        {
+          "file": "GSE254485_RNAseq_featureCounts_final.txt.gz",
+          "exists": true,
+          "size_bytes": 1021678,
+          "status": "header_readable"
+        }
+      ],
+      "blocking_review_issues": [
+        "Alias-based expression matches are not confirmed",
+        "Sample labels or independent biological replicates are not verified"
+      ],
+      "scientific_cautions": [
+        "Day 28/35/56 labels do not automatically mean DTP.",
+        "Time-course and resistance states must not be treated as interchangeable.",
+        "Expression-column aliases need scientific verification."
+      ],
+      "automatically_approved_for_training": false
+    },
+    {
+      "accession": "GSE335846",
+      "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335846",
+      "provisional_priority": 2,
+      "potential_research_use": "Cell-cycle phase control in treated PC9",
+      "assay": "sorted-cell RNA-seq",
+      "geo_gsm_records": 9,
+      "review_role": "cell_cycle_candidate",
+      "records_in_review_role": 9,
+      "candidate_gsm_records": 9,
+      "candidate_group_counts": {
+        "Day_0_G1": 2,
+        "Day_0_G2": 1,
+        "Day_0_S": 2,
+        "Day_28_G1": 2,
+        "Day_28_G2": 1,
+        "Day_28_S": 1
+      },
+      "candidate_review_status_counts": {
+        "PENDING_MANUAL_AND_MATRIX_CHECK": 9
+      },
+      "candidate_review_flags": {
+        "unequal_phase_sample_counts": 9
+      },
+      "mapping_status_counts": {
+        "exact_title": 9
+      },
+      "candidate_gsm_with_preliminary_mapping": 9,
+      "local_file_checks": [
+        {
+          "file": "GSE335846_RNA-seq_for_GEO.txt.gz",
+          "exists": true,
+          "size_bytes": 4632231,
+          "status": "header_readable"
+        }
+      ],
+      "blocking_review_issues": [
+        "Sample labels or independent biological replicates are not verified",
+        "Cell-cycle phase groups are unequal; no balanced 2x3 design"
+      ],
+      "scientific_cautions": [
+        "Day 0/28 and G1/S/G2 form an unbalanced design.",
+        "Different phase or clone counts must not be assumed independent or paired.",
+        "Title matching does not establish biological replicate independence."
+      ],
+      "automatically_approved_for_training": false
+    },
+    {
+      "accession": "GSE202859",
+      "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE202859",
+      "provisional_priority": 3,
+      "potential_research_use": "Parental/resistant and SMARCA4 perturbation controls",
+      "assay": "bulk RNA-seq",
+      "geo_gsm_records": 52,
+      "review_role": "resistance_candidate",
+      "records_in_review_role": 18,
+      "candidate_gsm_records": 18,
+      "candidate_group_counts": {
+        "Parental": 9,
+        "Resistant": 9
+      },
+      "candidate_review_status_counts": {
+        "PENDING_MANUAL_AND_MATRIX_CHECK": 18
+      },
+      "candidate_review_flags": {},
+      "mapping_status_counts": {
+        "alias_candidate": 52
+      },
+      "candidate_gsm_with_preliminary_mapping": 18,
+      "local_file_checks": [
+        {
+          "file": "GSE202859_TPMs_allsamples.txt.gz",
+          "exists": true,
+          "size_bytes": 3235557,
+          "status": "header_readable"
+        }
+      ],
+      "blocking_review_issues": [
+        "Alias-based expression matches are not confirmed",
+        "Sample labels or independent biological replicates are not verified"
+      ],
+      "scientific_cautions": [
+        "Resistant is not equivalent to DTP.",
+        "Knockdown and drug-treatment comparisons require separate analysis.",
+        "Expression-column aliases need scientific verification."
+      ],
+      "automatically_approved_for_training": false
+    },
+    {
+      "accession": "GSE282074",
+      "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282074",
+      "provisional_priority": 4,
+      "potential_research_use": "Single-cell drug-exposure and technology comparisons",
+      "assay": "single-cell RNA-seq with mixed experimental groups",
+      "geo_gsm_records": 32,
+      "review_role": "technology_benchmark_only",
+      "records_in_review_role": 32,
+      "candidate_gsm_records": 0,
+      "candidate_group_counts": {},
+      "candidate_review_status_counts": {},
+      "candidate_review_flags": {},
+      "mapping_status_counts": {
+        "exact_gsm": 80
+      },
+      "candidate_gsm_with_preliminary_mapping": 0,
+      "local_file_checks": [
+        {
+          "file": "GSE282074_RAW.tar",
+          "exists": true,
+          "size_bytes": 146841600,
+          "archive_regular_files": 80,
+          "status": "header_readable"
+        }
+      ],
+      "blocking_review_issues": [
+        "No samples approved as a modeling cohort by the prior review rule",
+        "Sample labels or independent biological replicates are not verified",
+        "Single-cell matrix requires replicate-aware, cell-level analysis"
+      ],
+      "scientific_cautions": [
+        "Multiple TAR members per GSM are not independent biological samples.",
+        "Study contains technology controls and more than one drug.",
+        "Individual cells must not be used as independent train/test samples."
+      ],
+      "automatically_approved_for_training": false
+    },
+    {
+      "accession": "GSE150949",
+      "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150949",
+      "provisional_priority": 5,
+      "potential_research_use": "Cycling and non-cycling persister comparisons",
+      "assay": "single-cell RNA-seq",
+      "geo_gsm_records": 19,
+      "review_role": "single_cell_candidate",
+      "records_in_review_role": 11,
+      "candidate_gsm_records": 11,
+      "candidate_group_counts": {
+        "day0": 1,
+        "day14": 6,
+        "day3": 2,
+        "day7": 2
+      },
+      "candidate_review_status_counts": {
+        "PENDING_MANUAL_AND_MATRIX_CHECK": 11
+      },
+      "candidate_review_flags": {
+        "cells_not_independent_replicates": 11
+      },
+      "mapping_status_counts": {
+        "cell_barcodes_need_metadata_join": 1
+      },
+      "candidate_gsm_with_preliminary_mapping": 0,
+      "local_file_checks": [
+        {
+          "file": "GSE150949_metaData_with_lineage.txt.gz",
+          "exists": true,
+          "size_bytes": 1759405,
+          "status": "header_readable"
+        },
+        {
+          "file": "GSE150949_pc9_count_matrix.csv.gz",
+          "exists": true,
+          "size_bytes": 123096563,
+          "status": "header_readable"
+        }
+      ],
+      "blocking_review_issues": [
+        "Some candidate GSM records have no expression mapping candidate",
+        "Sample labels or independent biological replicates are not verified",
+        "Single-cell matrix requires replicate-aware, cell-level analysis"
+      ],
+      "scientific_cautions": [
+        "GSM experiments and thousands of cell barcodes are different units.",
+        "Cell-level metadata and biological-replicate identity need joining.",
+        "A cell-wise random split would overstate generalization."
+      ],
+      "automatically_approved_for_training": false
+    }
+  ]
+}
