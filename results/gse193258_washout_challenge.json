@@ -1,0 +1,312 @@
+{
+  "analysis": "exploratory_washout_challenge",
+  "design": "LOCO: train exclusively on Control/Acute/DTP; inspect unseen washout cells from the held-out cell line",
+  "source_dataset": "GSE193258",
+  "training_samples": 36,
+  "washout_samples": 24,
+  "shared_genes": 18013,
+  "stage09_predictions_reproduced": true,
+  "washout_original_matrix_sha256": "c4bd1b3d7e158783347a7b678df70bec2c590728a59486d67fcb3a8e21750949",
+  "folds": [
+    {
+      "held_out_cell_line": "H1975",
+      "groups": {
+        "ShortWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.7874478835225237,
+          "median_p_dtp": 0.8858889808061164,
+          "predicted_dtp_count": 3
+        },
+        "LongWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.8232894282341005,
+          "median_p_dtp": 0.7881436390843515,
+          "predicted_dtp_count": 3
+        },
+        "OnDrugDTP": {
+          "n": 3,
+          "mean_p_dtp": 0.8576028389686821,
+          "median_p_dtp": 0.8292358409697181,
+          "predicted_dtp_count": 3
+        }
+      },
+      "washout_predictions": [
+        {
+          "gsm": "GSM5777999",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 72 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.7605797235091029,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778000",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 72 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9211449221088468,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778001",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 72 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.7881436390843515,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778008",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.8858889808061164,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778009",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.5511306942524592,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778010",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9253239755089955,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        }
+      ]
+    },
+    {
+      "held_out_cell_line": "HCC2935",
+      "groups": {
+        "ShortWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.9953435068741369,
+          "median_p_dtp": 0.9959711993518866,
+          "predicted_dtp_count": 3
+        },
+        "LongWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.9603545548071106,
+          "median_p_dtp": 0.952886388860256,
+          "predicted_dtp_count": 3
+        },
+        "OnDrugDTP": {
+          "n": 3,
+          "mean_p_dtp": 0.9915207340079132,
+          "median_p_dtp": 0.9906219977967275,
+          "predicted_dtp_count": 3
+        }
+      },
+      "washout_predictions": [
+        {
+          "gsm": "GSM5778014",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 10 days",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9968874893667694,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778015",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 10 days",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9312897861943067,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778016",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 10 days",
+          "predicted_state": "DTP",
+          "p_dtp": 0.952886388860256,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778023",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9938648718096439,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778024",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9959711993518866,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778025",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9961944494608803,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        }
+      ]
+    },
+    {
+      "held_out_cell_line": "HCC827",
+      "groups": {
+        "ShortWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.7645389159223853,
+          "median_p_dtp": 0.7107328278702247,
+          "predicted_dtp_count": 3
+        },
+        "LongWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.7443448570729615,
+          "median_p_dtp": 0.7622169696239134,
+          "predicted_dtp_count": 3
+        },
+        "OnDrugDTP": {
+          "n": 3,
+          "mean_p_dtp": 0.7762649142949614,
+          "median_p_dtp": 0.8094337853020228,
+          "predicted_dtp_count": 3
+        }
+      },
+      "washout_predictions": [
+        {
+          "gsm": "GSM5778029",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 96 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.7622169696239134,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778030",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 96 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.5963532936218898,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778031",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 96 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.8744643079730812,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778038",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.9327227244189118,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778039",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.7107328278702247,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778040",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.6501611954780193,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        }
+      ]
+    },
+    {
+      "held_out_cell_line": "PC9",
+      "groups": {
+        "ShortWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.659033467996225,
+          "median_p_dtp": 0.6535348159013081,
+          "predicted_dtp_count": 3
+        },
+        "LongWashout": {
+          "n": 3,
+          "mean_p_dtp": 0.22591523477701725,
+          "median_p_dtp": 0.06960369097424766,
+          "predicted_dtp_count": 1
+        },
+        "OnDrugDTP": {
+          "n": 3,
+          "mean_p_dtp": 0.440470131875531,
+          "median_p_dtp": 0.4127420023941651,
+          "predicted_dtp_count": 1
+        }
+      },
+      "washout_predictions": [
+        {
+          "gsm": "GSM5778044",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 7 days",
+          "predicted_state": "Control",
+          "p_dtp": 0.06960369097424766,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778045",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 7 days",
+          "predicted_state": "Control",
+          "p_dtp": 0.01771120582303334,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778046",
+          "challenge_group": "LongWashout",
+          "treatment": "osimertinib DTPs long washout 7 days",
+          "predicted_state": "DTP",
+          "p_dtp": 0.5904308075337708,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778053",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.7347144028388366,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778054",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.58885118524853,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        },
+        {
+          "gsm": "GSM5778055",
+          "challenge_group": "ShortWashout",
+          "treatment": "osimertinib DTPs short washout 24 hrs.",
+          "predicted_state": "DTP",
+          "p_dtp": 0.6535348159013081,
+          "alias_status": "automatic_title_and_treatment_check_only"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Washout samples are not paired longitudinal samples and are not ground-truth negative controls for DTP.",
+    "Long washout duration differs by cell line and is tied to regrowth.",
+    "All DTP samples had long drug exposure; state and initial exposure duration remain confounded.",
+    "Model confidence does not measure biological persistence or causality.",
+    "Alias mappings were checked against names and treatment labels, not manually verified against the article.",
+    "These results are exploratory and were designed after inspecting earlier LOCO outcomes."
+  ]
+}
