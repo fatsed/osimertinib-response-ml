@@ -1,0 +1,351 @@
+{
+  "analysis": "exploratory_stage39_feature_selection_sensitivity",
+  "source": "GSE193258",
+  "n_variants": 32,
+  "feature_counts": [
+    100,
+    250,
+    500,
+    1000
+  ],
+  "feature_selectors": [
+    "ANOVA",
+    "VarianceTopK"
+  ],
+  "stage39_anova_500_reproduced": true,
+  "external_validation": false,
+  "model_fitted": false,
+  "heldout_and_washout_used_for_feature_selection": false,
+  "metric": "orthogonal distance of washout centroid from held-out Acute--DTP axis, normalized by held-out centroid gap",
+  "records": [
+    {
+      "cell_line": "H1975",
+      "selector": "ANOVA",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.6163641733434453,
+      "long_orthogonal_ratio": 0.26473162007702467,
+      "long_minus_short_orthogonal_ratio": -0.3516325532664206,
+      "short_axis_retention": 1.3018948492937756,
+      "long_axis_retention": 0.9277354812108249
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "ANOVA",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.5564566576223876,
+      "long_orthogonal_ratio": 0.26198897215418737,
+      "long_minus_short_orthogonal_ratio": -0.29446768546820024,
+      "short_axis_retention": 1.264516259639135,
+      "long_axis_retention": 0.9218600021818185
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "ANOVA",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.5572064431566687,
+      "long_orthogonal_ratio": 0.2918194727839448,
+      "long_minus_short_orthogonal_ratio": -0.26538697037272385,
+      "short_axis_retention": 1.2203679009849822,
+      "long_axis_retention": 0.9108163030815671
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "ANOVA",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.5321844612551908,
+      "long_orthogonal_ratio": 0.29597811137498925,
+      "long_minus_short_orthogonal_ratio": -0.23620634988020156,
+      "short_axis_retention": 1.167340791876803,
+      "long_axis_retention": 0.9119308629201422
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "VarianceTopK",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.47374469482204373,
+      "long_orthogonal_ratio": 0.39578985187232246,
+      "long_minus_short_orthogonal_ratio": -0.07795484294972127,
+      "short_axis_retention": 0.9229097710376696,
+      "long_axis_retention": 0.8900107982747184
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "VarianceTopK",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.5418515469487338,
+      "long_orthogonal_ratio": 0.5160803139155734,
+      "long_minus_short_orthogonal_ratio": -0.025771233033160423,
+      "short_axis_retention": 0.8250882232722504,
+      "long_axis_retention": 0.8158035036043126
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "VarianceTopK",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.4939678077842647,
+      "long_orthogonal_ratio": 0.5002489382876392,
+      "long_minus_short_orthogonal_ratio": 0.006281130503374477,
+      "short_axis_retention": 0.8300539790264259,
+      "long_axis_retention": 0.8283760992701834
+    },
+    {
+      "cell_line": "H1975",
+      "selector": "VarianceTopK",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.5392259927356852,
+      "long_orthogonal_ratio": 0.5592241533592005,
+      "long_minus_short_orthogonal_ratio": 0.019998160623515338,
+      "short_axis_retention": 0.8653518652048607,
+      "long_axis_retention": 0.8098951200510113
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "ANOVA",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.4437200809613984,
+      "long_orthogonal_ratio": 0.4799156548090578,
+      "long_minus_short_orthogonal_ratio": 0.03619557384765937,
+      "short_axis_retention": 1.2258265604247396,
+      "long_axis_retention": 1.0959888208597732
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "ANOVA",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.45045033578635485,
+      "long_orthogonal_ratio": 0.4905568001642632,
+      "long_minus_short_orthogonal_ratio": 0.040106464377908324,
+      "short_axis_retention": 1.2182578875921652,
+      "long_axis_retention": 1.1152131728280636
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "ANOVA",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.47490359393413806,
+      "long_orthogonal_ratio": 0.5615039719222706,
+      "long_minus_short_orthogonal_ratio": 0.08660037798813258,
+      "short_axis_retention": 1.192958528092139,
+      "long_axis_retention": 1.089547780689072
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "ANOVA",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.45050871342452375,
+      "long_orthogonal_ratio": 0.5301013446730146,
+      "long_minus_short_orthogonal_ratio": 0.07959263124849086,
+      "short_axis_retention": 1.1463948585342774,
+      "long_axis_retention": 1.0732537861282505
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "VarianceTopK",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.439781400006825,
+      "long_orthogonal_ratio": 0.4618594539672344,
+      "long_minus_short_orthogonal_ratio": 0.022078053960409405,
+      "short_axis_retention": 0.8664584034337586,
+      "long_axis_retention": 0.8809621441837767
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "VarianceTopK",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.49685222668461204,
+      "long_orthogonal_ratio": 0.5237979225860776,
+      "long_minus_short_orthogonal_ratio": 0.02694569590146556,
+      "short_axis_retention": 0.8807272620112904,
+      "long_axis_retention": 0.9084200959207651
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "VarianceTopK",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.4505808183390337,
+      "long_orthogonal_ratio": 0.5191131132554538,
+      "long_minus_short_orthogonal_ratio": 0.06853229491642016,
+      "short_axis_retention": 0.9011253463650797,
+      "long_axis_retention": 0.8811058709066517
+    },
+    {
+      "cell_line": "HCC2935",
+      "selector": "VarianceTopK",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.5925927391196071,
+      "long_orthogonal_ratio": 0.6225059009171191,
+      "long_minus_short_orthogonal_ratio": 0.029913161797512022,
+      "short_axis_retention": 0.8442168976884582,
+      "long_axis_retention": 0.8461743221979089
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "ANOVA",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.3075197233126296,
+      "long_orthogonal_ratio": 0.3027101746221851,
+      "long_minus_short_orthogonal_ratio": -0.004809548690444532,
+      "short_axis_retention": 0.9775703056407077,
+      "long_axis_retention": 0.9162263862487019
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "ANOVA",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.3171886078298684,
+      "long_orthogonal_ratio": 0.2773404722139495,
+      "long_minus_short_orthogonal_ratio": -0.039848135615918934,
+      "short_axis_retention": 1.0210078908919031,
+      "long_axis_retention": 0.9328362191569266
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "ANOVA",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.3030168501984872,
+      "long_orthogonal_ratio": 0.28858434597255833,
+      "long_minus_short_orthogonal_ratio": -0.014432504225928844,
+      "short_axis_retention": 1.0509314050075917,
+      "long_axis_retention": 0.933378689597553
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "ANOVA",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.31460021338382493,
+      "long_orthogonal_ratio": 0.3278736849388485,
+      "long_minus_short_orthogonal_ratio": 0.013273471555023564,
+      "short_axis_retention": 1.032075030761578,
+      "long_axis_retention": 0.9277449959270337
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "VarianceTopK",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.4992093466849573,
+      "long_orthogonal_ratio": 0.5626628600774676,
+      "long_minus_short_orthogonal_ratio": 0.06345351339251026,
+      "short_axis_retention": 0.9670092642064105,
+      "long_axis_retention": 0.8216769623416105
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "VarianceTopK",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.4753182405561007,
+      "long_orthogonal_ratio": 0.47811585526014755,
+      "long_minus_short_orthogonal_ratio": 0.0027976147040468247,
+      "short_axis_retention": 0.9440494449291095,
+      "long_axis_retention": 0.854769913122837
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "VarianceTopK",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.48741166024430527,
+      "long_orthogonal_ratio": 0.4816880409779839,
+      "long_minus_short_orthogonal_ratio": -0.005723619266321367,
+      "short_axis_retention": 0.9020746170404593,
+      "long_axis_retention": 0.8560854522317981
+    },
+    {
+      "cell_line": "HCC827",
+      "selector": "VarianceTopK",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.5249881436268,
+      "long_orthogonal_ratio": 0.4901466369030369,
+      "long_minus_short_orthogonal_ratio": -0.03484150672376313,
+      "short_axis_retention": 0.8884681649706085,
+      "long_axis_retention": 0.8299393640570792
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "ANOVA",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.37928580007358903,
+      "long_orthogonal_ratio": 0.6609979002635912,
+      "long_minus_short_orthogonal_ratio": 0.28171210019000215,
+      "short_axis_retention": 1.2820685786347248,
+      "long_axis_retention": 1.3471400568054743
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "ANOVA",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.4393591015233801,
+      "long_orthogonal_ratio": 0.7293449059415811,
+      "long_minus_short_orthogonal_ratio": 0.289985804418201,
+      "short_axis_retention": 1.2402824484478443,
+      "long_axis_retention": 1.2975806995969408
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "ANOVA",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.4582706395974394,
+      "long_orthogonal_ratio": 0.7486783928422295,
+      "long_minus_short_orthogonal_ratio": 0.29040775324479007,
+      "short_axis_retention": 1.2132304677561263,
+      "long_axis_retention": 1.251476048848819
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "ANOVA",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.4969602733948259,
+      "long_orthogonal_ratio": 0.7968494533260396,
+      "long_minus_short_orthogonal_ratio": 0.2998891799312137,
+      "short_axis_retention": 1.1675047932033273,
+      "long_axis_retention": 1.1691950315417894
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "VarianceTopK",
+      "k_features": 100,
+      "short_orthogonal_ratio": 0.5266774772704909,
+      "long_orthogonal_ratio": 0.5536912392031968,
+      "long_minus_short_orthogonal_ratio": 0.027013761932705993,
+      "short_axis_retention": 0.8965881574132512,
+      "long_axis_retention": 0.6015066501625886
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "VarianceTopK",
+      "k_features": 250,
+      "short_orthogonal_ratio": 0.5465659150839917,
+      "long_orthogonal_ratio": 0.558472318583637,
+      "long_minus_short_orthogonal_ratio": 0.011906403499645335,
+      "short_axis_retention": 0.8351926947227704,
+      "long_axis_retention": 0.6023470892122831
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "VarianceTopK",
+      "k_features": 500,
+      "short_orthogonal_ratio": 0.6017496961838078,
+      "long_orthogonal_ratio": 0.6479402460993376,
+      "long_minus_short_orthogonal_ratio": 0.046190549915529844,
+      "short_axis_retention": 0.8180212718033719,
+      "long_axis_retention": 0.5911205366016463
+    },
+    {
+      "cell_line": "PC9",
+      "selector": "VarianceTopK",
+      "k_features": 1000,
+      "short_orthogonal_ratio": 0.607930983380646,
+      "long_orthogonal_ratio": 0.6741910651158879,
+      "long_minus_short_orthogonal_ratio": 0.0662600817352419,
+      "short_axis_retention": 0.7666591901313776,
+      "long_axis_retention": 0.5760829098350109
+    }
+  ],
+  "limitations": [
+    "This is a descriptive sensitivity check, not model selection or prediction accuracy.",
+    "Both the axis and feature space depend on the selection method and training fold.",
+    "Held-out Acute/DTP labels define the reference axis; not an independent test.",
+    "Only three unpaired replicates per condition; no ground-truth persistence labels.",
+    "Long washout duration differs between cell lines; direct pooled time comparisons are invalid.",
+    "Exposure duration is confounded with treatment state in the source.",
+    "All groups have already been inspected; do not tune a method using these results."
+  ]
+}
