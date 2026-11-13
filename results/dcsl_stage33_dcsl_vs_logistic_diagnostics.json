@@ -1,0 +1,1249 @@
+{
+  "analysis": "stage33_posthoc_dcsl_vs_logistic_training_only_replay_and_ablations",
+  "source": "GSE193258",
+  "n_samples": 36,
+  "stage31_sha256": "044650b4b3b9278a8ef21d7816e0f4e001d6047b34c4772d66126c004a7f9bd6",
+  "stage32_sha256": "a615a1cb4fb1c1e23519bb3faaa0224661d208533b7d4bf9422132016bfff285",
+  "input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33",
+    "stage30_report_sha256": "2ed34250ba1278057ad7ec74b20608c25dbe1124e4ba218260f0a385fba33e14"
+  },
+  "stage32_frozen_predictions_and_feature_hashes_reproduced": true,
+  "candidate_selection_reused_without_changes": true,
+  "ablation_fits_on_outer_training_only": true,
+  "heldout_labels_used_to_train_select_or_tune": false,
+  "target_expression_read": false,
+  "independent_validation": false,
+  "source_labels_provisional": true,
+  "historically_seen_PC9": true,
+  "ablation_status": "POSTHOC_DIAGNOSTICS_NOT_NESTED_CANDIDATES_OR_METHOD_IMPROVEMENT",
+  "outer_folds": [
+    {
+      "outer_test_cell_line": "H1975",
+      "train_n": 27,
+      "heldout_n": 9,
+      "frozen_configurations": {
+        "LogisticRegression": {
+          "candidate_id": "logistic_anova_500_C0.01",
+          "selected_feature_indices_sha256": "70396a027fd097d6f03351c161abaf44427c836ab17a8cbb850404474713ec73"
+        },
+        "DCSL": {
+          "candidate_id": "dcsl_stable_500_gamma0.05",
+          "selected_feature_indices_sha256": "d6639c523705974080c2dbc7266587332e0641c3cbc2cebf33bd8cadf197a2cb"
+        },
+        "matched_anova_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "70396a027fd097d6f03351c161abaf44427c836ab17a8cbb850404474713ec73"
+        },
+        "matched_stable_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "d6639c523705974080c2dbc7266587332e0641c3cbc2cebf33bd8cadf197a2cb"
+        },
+        "matched_anova_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "70396a027fd097d6f03351c161abaf44427c836ab17a8cbb850404474713ec73"
+        },
+        "matched_stable_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "d6639c523705974080c2dbc7266587332e0641c3cbc2cebf33bd8cadf197a2cb"
+        }
+      },
+      "feature_overlap": {
+        "logistic_ANOVA_vs_DCSL_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 106,
+          "jaccard": 0.1185682326621924
+        },
+        "matched_ANOVA_vs_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 106,
+          "jaccard": 0.1185682326621924
+        }
+      },
+      "dcsl_training_objective": {
+        "frozen_dcsl": {
+          "training_cross_entropy": 0.004125547333661332,
+          "training_l2_term": 0.012287735382686954,
+          "training_margin_variance": 0.00017672143021078225,
+          "gamma": 0.05,
+          "training_stability_term": 8.836071510539113e-06,
+          "training_total_objective": 0.016422118787858826
+        }
+      },
+      "per_model_heldout_DTP_recall_posthoc": {
+        "LogisticRegression": 1.0,
+        "DCSL": 1.0,
+        "matched_anova_gamma0": 1.0,
+        "matched_stable_gamma0": 1.0,
+        "matched_anova_logistic_l2": 1.0,
+        "matched_stable_logistic_l2": 1.0
+      },
+      "algebraic_regularization_comparison": {
+        "frozen_logistic_C": 0.01,
+        "outer_train_n": 27,
+        "matched_mean_CE_l2": 3.7037037037037033,
+        "original_dcsl_l2": 0.1,
+        "max_centered_logit_difference_logistic_vs_matched_ANOVA_l2": 0.002507122745249113,
+        "matched_ANOVA_l2_predictions_equal_frozen_logistic": true
+      },
+      "paired_error_counts": {
+        "both_correct": 7,
+        "logistic_only_correct": 1,
+        "dcsl_only_correct": 0,
+        "both_wrong": 1,
+        "prediction_disagreements": 1
+      },
+      "samples_posthoc": [
+        {
+          "gsm": "GSM5777996",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.610091880965351,
+            "DCSL": 4.919102604369337,
+            "matched_anova_gamma0": 4.879194401292368,
+            "matched_stable_gamma0": 4.339974308994168,
+            "matched_anova_logistic_l2": 2.6059586414058655,
+            "matched_stable_logistic_l2": 2.363401692909906
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5777997",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 3.2182013179483735,
+            "DCSL": 6.811904844593514,
+            "matched_anova_gamma0": 6.223340856134193,
+            "matched_stable_gamma0": 6.228245119485686,
+            "matched_anova_logistic_l2": 3.214125863612134,
+            "matched_stable_logistic_l2": 3.4103866068189754
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5777998",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.378900246287177,
+            "DCSL": 4.700751198429165,
+            "matched_anova_gamma0": 4.362891646955598,
+            "matched_stable_gamma0": 4.168331671492762,
+            "matched_anova_logistic_l2": 2.3745992852468647,
+            "matched_stable_logistic_l2": 2.290256826291924
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778002",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 0.22972762238862732,
+            "DCSL": 1.7092034062404788,
+            "matched_anova_gamma0": 0.6270817387729242,
+            "matched_stable_gamma0": 1.1555386734430717,
+            "matched_anova_logistic_l2": 0.23012835999518388,
+            "matched_stable_logistic_l2": 0.6141640012314146
+          },
+          "logistic_correct": false,
+          "dcsl_correct": false
+        },
+        {
+          "gsm": "GSM5778003",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -0.3882216284719684,
+            "DCSL": 0.3267046290973684,
+            "matched_anova_gamma0": -0.7618219775328399,
+            "matched_stable_gamma0": -0.16210266835678033,
+            "matched_anova_logistic_l2": -0.3880621746721553,
+            "matched_stable_logistic_l2": -0.06032519063932512
+          },
+          "logistic_correct": true,
+          "dcsl_correct": false
+        },
+        {
+          "gsm": "GSM5778004",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -0.734520014781105,
+            "DCSL": -0.40899178737463926,
+            "matched_anova_gamma0": -1.5329874583622272,
+            "matched_stable_gamma0": -1.0172615623258388,
+            "matched_anova_logistic_l2": -0.7343299733254949,
+            "matched_stable_logistic_l2": -0.5383867299011225
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778005",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 1.49027990356469,
+            "DCSL": 4.687617512677681,
+            "matched_anova_gamma0": 3.323961498296565,
+            "matched_stable_gamma0": 4.1639656795551065,
+            "matched_anova_logistic_l2": 1.4905232693000294,
+            "matched_stable_logistic_l2": 2.22576258224889
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778006",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.3765547919177252,
+            "DCSL": 5.634297610820511,
+            "matched_anova_gamma0": 4.939205314639004,
+            "matched_stable_gamma0": 5.2127219577888795,
+            "matched_anova_logistic_l2": 2.375393651710387,
+            "matched_stable_logistic_l2": 2.8106936842559467
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778007",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 0.8228223529154096,
+            "DCSL": 3.334949087718175,
+            "matched_anova_gamma0": 1.991381567601108,
+            "matched_stable_gamma0": 2.6947654982429006,
+            "matched_anova_logistic_l2": 0.8232655649874625,
+            "matched_stable_logistic_l2": 1.4492968746930268
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        }
+      ]
+    },
+    {
+      "outer_test_cell_line": "HCC2935",
+      "train_n": 27,
+      "heldout_n": 9,
+      "frozen_configurations": {
+        "LogisticRegression": {
+          "candidate_id": "logistic_anova_500_C0.01",
+          "selected_feature_indices_sha256": "9a26f81bd0e942e45ae16dabb8756063b89e3739c253d1ce9754830be73745eb"
+        },
+        "DCSL": {
+          "candidate_id": "dcsl_stable_500_gamma0.0",
+          "selected_feature_indices_sha256": "7a2f7af179e023cc8cdff56af20ec27907990419fcd1c115073a028410192d78"
+        },
+        "matched_anova_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "9a26f81bd0e942e45ae16dabb8756063b89e3739c253d1ce9754830be73745eb"
+        },
+        "matched_stable_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "7a2f7af179e023cc8cdff56af20ec27907990419fcd1c115073a028410192d78"
+        },
+        "matched_anova_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "9a26f81bd0e942e45ae16dabb8756063b89e3739c253d1ce9754830be73745eb"
+        },
+        "matched_stable_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "7a2f7af179e023cc8cdff56af20ec27907990419fcd1c115073a028410192d78"
+        }
+      },
+      "feature_overlap": {
+        "logistic_ANOVA_vs_DCSL_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 49,
+          "jaccard": 0.05152471083070452
+        },
+        "matched_ANOVA_vs_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 49,
+          "jaccard": 0.05152471083070452
+        }
+      },
+      "dcsl_training_objective": {
+        "frozen_dcsl": {
+          "training_cross_entropy": 0.005177325233321685,
+          "training_l2_term": 0.014369952671980206,
+          "training_margin_variance": 0.18453273569432768,
+          "gamma": 0.0,
+          "training_stability_term": 0.0,
+          "training_total_objective": 0.01954727790530189
+        }
+      },
+      "per_model_heldout_DTP_recall_posthoc": {
+        "LogisticRegression": 1.0,
+        "DCSL": 1.0,
+        "matched_anova_gamma0": 1.0,
+        "matched_stable_gamma0": 1.0,
+        "matched_anova_logistic_l2": 1.0,
+        "matched_stable_logistic_l2": 1.0
+      },
+      "algebraic_regularization_comparison": {
+        "frozen_logistic_C": 0.01,
+        "outer_train_n": 27,
+        "matched_mean_CE_l2": 3.7037037037037033,
+        "original_dcsl_l2": 0.1,
+        "max_centered_logit_difference_logistic_vs_matched_ANOVA_l2": 0.0033963828267320473,
+        "matched_ANOVA_l2_predictions_equal_frozen_logistic": true
+      },
+      "paired_error_counts": {
+        "both_correct": 9,
+        "logistic_only_correct": 0,
+        "dcsl_only_correct": 0,
+        "both_wrong": 0,
+        "prediction_disagreements": 0
+      },
+      "samples_posthoc": [
+        {
+          "gsm": "GSM5778011",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.9359443816351094,
+            "DCSL": 2.5762987872485845,
+            "matched_anova_gamma0": 6.070475525258312,
+            "matched_stable_gamma0": 2.5762987872485845,
+            "matched_anova_logistic_l2": 2.938184564510706,
+            "matched_stable_logistic_l2": 1.3011515943019232
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778012",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 3.0751941435347097,
+            "DCSL": 2.7865554233269063,
+            "matched_anova_gamma0": 6.405044724238019,
+            "matched_stable_gamma0": 2.7865554233269063,
+            "matched_anova_logistic_l2": 3.077476268158609,
+            "matched_stable_logistic_l2": 1.3931890049251692
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778013",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.79456520574875,
+            "DCSL": 2.949958384105693,
+            "matched_anova_gamma0": 5.658393978944542,
+            "matched_stable_gamma0": 2.949958384105693,
+            "matched_anova_logistic_l2": 2.79676307595215,
+            "matched_stable_logistic_l2": 1.507213024572434
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778017",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -1.457770488968516,
+            "DCSL": -3.5147534910679226,
+            "matched_anova_gamma0": -3.584067474105709,
+            "matched_stable_gamma0": -3.5147534910679226,
+            "matched_anova_logistic_l2": -1.4582884303791555,
+            "matched_stable_logistic_l2": -1.867151213929174
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778018",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -1.1767287604478687,
+            "DCSL": -2.677071502143786,
+            "matched_anova_gamma0": -2.811775375915527,
+            "matched_stable_gamma0": -2.677071502143786,
+            "matched_anova_logistic_l2": -1.177218399217919,
+            "matched_stable_logistic_l2": -1.472826546376826
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778019",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -1.0000857262272458,
+            "DCSL": -2.32553226971088,
+            "matched_anova_gamma0": -2.460498843667053,
+            "matched_stable_gamma0": -2.32553226971088,
+            "matched_anova_logistic_l2": -1.0005902982732162,
+            "matched_stable_logistic_l2": -1.197687812691054
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778020",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.5456794561794274,
+            "DCSL": 7.8876305092350165,
+            "matched_anova_gamma0": 6.001303684524896,
+            "matched_stable_gamma0": 7.8876305092350165,
+            "matched_anova_logistic_l2": 2.5451057867559026,
+            "matched_stable_logistic_l2": 4.044729028686959
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778021",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.299315152377311,
+            "DCSL": 8.14517330367551,
+            "matched_anova_gamma0": 5.648462989372191,
+            "matched_stable_gamma0": 8.14517330367551,
+            "matched_anova_logistic_l2": 2.2984757651399357,
+            "matched_stable_logistic_l2": 4.085011233229558
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778022",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 3.2955452681290534,
+            "DCSL": 8.68678783750845,
+            "matched_anova_gamma0": 7.745794487251624,
+            "matched_stable_gamma0": 8.68678783750845,
+            "matched_anova_logistic_l2": 3.2952939012399054,
+            "matched_stable_logistic_l2": 4.391642030012368
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        }
+      ]
+    },
+    {
+      "outer_test_cell_line": "HCC827",
+      "train_n": 27,
+      "heldout_n": 9,
+      "frozen_configurations": {
+        "LogisticRegression": {
+          "candidate_id": "logistic_anova_500_C0.01",
+          "selected_feature_indices_sha256": "29341a33f33632bb4df2b10268861cf7c4bcc585e89e4dcc8526b90c433b5a78"
+        },
+        "DCSL": {
+          "candidate_id": "dcsl_stable_500_gamma0.0",
+          "selected_feature_indices_sha256": "5627966068495189f2b8c518d5c98cc92d8f5c29e18e84ce5e5961470e6e29f2"
+        },
+        "matched_anova_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "29341a33f33632bb4df2b10268861cf7c4bcc585e89e4dcc8526b90c433b5a78"
+        },
+        "matched_stable_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "5627966068495189f2b8c518d5c98cc92d8f5c29e18e84ce5e5961470e6e29f2"
+        },
+        "matched_anova_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "29341a33f33632bb4df2b10268861cf7c4bcc585e89e4dcc8526b90c433b5a78"
+        },
+        "matched_stable_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "5627966068495189f2b8c518d5c98cc92d8f5c29e18e84ce5e5961470e6e29f2"
+        }
+      },
+      "feature_overlap": {
+        "logistic_ANOVA_vs_DCSL_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 62,
+          "jaccard": 0.06609808102345416
+        },
+        "matched_ANOVA_vs_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 62,
+          "jaccard": 0.06609808102345416
+        }
+      },
+      "dcsl_training_objective": {
+        "frozen_dcsl": {
+          "training_cross_entropy": 0.004857944242731647,
+          "training_l2_term": 0.013755687921690749,
+          "training_margin_variance": 0.9626953187896771,
+          "gamma": 0.0,
+          "training_stability_term": 0.0,
+          "training_total_objective": 0.018613632164422397
+        }
+      },
+      "per_model_heldout_DTP_recall_posthoc": {
+        "LogisticRegression": 1.0,
+        "DCSL": 1.0,
+        "matched_anova_gamma0": 1.0,
+        "matched_stable_gamma0": 1.0,
+        "matched_anova_logistic_l2": 1.0,
+        "matched_stable_logistic_l2": 1.0
+      },
+      "algebraic_regularization_comparison": {
+        "frozen_logistic_C": 0.01,
+        "outer_train_n": 27,
+        "matched_mean_CE_l2": 3.7037037037037033,
+        "original_dcsl_l2": 0.1,
+        "max_centered_logit_difference_logistic_vs_matched_ANOVA_l2": 0.0011262788208519225,
+        "matched_ANOVA_l2_predictions_equal_frozen_logistic": true
+      },
+      "paired_error_counts": {
+        "both_correct": 9,
+        "logistic_only_correct": 0,
+        "dcsl_only_correct": 0,
+        "both_wrong": 0,
+        "prediction_disagreements": 0
+      },
+      "samples_posthoc": [
+        {
+          "gsm": "GSM5778026",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 1.460138354506069,
+            "DCSL": 0.8013524861294343,
+            "matched_anova_gamma0": 2.7632852983794662,
+            "matched_stable_gamma0": 0.8013524861294343,
+            "matched_anova_logistic_l2": 1.460255979950774,
+            "matched_stable_logistic_l2": 0.3927236724755209
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778027",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 2.3991860150800237,
+            "DCSL": 3.711792563760137,
+            "matched_anova_gamma0": 4.645501239533048,
+            "matched_stable_gamma0": 3.711792563760137,
+            "matched_anova_logistic_l2": 2.399154106820976,
+            "matched_stable_logistic_l2": 1.9238577575439564
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778028",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 0.9498724923019594,
+            "DCSL": -0.9279505600062496,
+            "matched_anova_gamma0": 1.590928143663235,
+            "matched_stable_gamma0": -0.9279505600062496,
+            "matched_anova_logistic_l2": 0.9500254894693811,
+            "matched_stable_logistic_l2": -0.5044239952656979
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778032",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -1.6919184453674836,
+            "DCSL": -3.0084654490139977,
+            "matched_anova_gamma0": -3.4955191300075192,
+            "matched_stable_gamma0": -3.0084654490139977,
+            "matched_anova_logistic_l2": -1.6916042451748075,
+            "matched_stable_logistic_l2": -1.609487363792443
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778033",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -1.5558290003264763,
+            "DCSL": -2.61017138084603,
+            "matched_anova_gamma0": -3.249301593017634,
+            "matched_stable_gamma0": -2.61017138084603,
+            "matched_anova_logistic_l2": -1.555571972228569,
+            "matched_stable_logistic_l2": -1.4017954962321613
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778034",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -0.78605302542947,
+            "DCSL": -0.9828727631160556,
+            "matched_anova_gamma0": -1.5642843177652432,
+            "matched_stable_gamma0": -0.9828727631160556,
+            "matched_anova_logistic_l2": -0.7858542022219028,
+            "matched_stable_logistic_l2": -0.5724773849325795
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778035",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 1.2688454796348858,
+            "DCSL": 4.075248391335056,
+            "matched_anova_gamma0": 3.0801490016587634,
+            "matched_stable_gamma0": 4.075248391335056,
+            "matched_anova_logistic_l2": 1.2688279112162173,
+            "matched_stable_logistic_l2": 2.09357383214261
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778036",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 1.0931082639028147,
+            "DCSL": 1.9455844699730935,
+            "matched_anova_gamma0": 2.6507275769450485,
+            "matched_stable_gamma0": 1.9455844699730935,
+            "matched_anova_logistic_l2": 1.0931819990539435,
+            "matched_stable_logistic_l2": 1.0238686226046343
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778037",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "DTP",
+            "matched_anova_gamma0": "DTP",
+            "matched_stable_gamma0": "DTP",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "DTP"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 0.407403272073588,
+            "DCSL": 0.5090378174211118,
+            "matched_anova_gamma0": 0.8742729278882919,
+            "matched_stable_gamma0": 0.5090378174211118,
+            "matched_anova_logistic_l2": 0.40746260705651804,
+            "matched_stable_logistic_l2": 0.32804999685813496
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        }
+      ]
+    },
+    {
+      "outer_test_cell_line": "PC9",
+      "train_n": 27,
+      "heldout_n": 9,
+      "frozen_configurations": {
+        "LogisticRegression": {
+          "candidate_id": "logistic_anova_500_C0.01",
+          "selected_feature_indices_sha256": "6ceba0dd2277ba1740008919767e02ee7ad3d892cbd2ba66193b2230f4b5f2b3"
+        },
+        "DCSL": {
+          "candidate_id": "dcsl_stable_500_gamma0.05",
+          "selected_feature_indices_sha256": "8f5edcd82a4bea031fb69a1eca43a0679db72ef987c3acbd5c919d3f849c804f"
+        },
+        "matched_anova_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "6ceba0dd2277ba1740008919767e02ee7ad3d892cbd2ba66193b2230f4b5f2b3"
+        },
+        "matched_stable_gamma0": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 0.1,
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "8f5edcd82a4bea031fb69a1eca43a0679db72ef987c3acbd5c919d3f849c804f"
+        },
+        "matched_anova_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "anova",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "6ceba0dd2277ba1740008919767e02ee7ad3d892cbd2ba66193b2230f4b5f2b3"
+        },
+        "matched_stable_logistic_l2": {
+          "settings_fixed_for_diagnostic": {
+            "selector": "stable",
+            "n_features": 500,
+            "l2": 3.7037037037037033,
+            "l2_derivation": "1 / (n_outer_training_samples * frozen_logistic_C)",
+            "gamma": 0.0,
+            "tau": 0.5
+          },
+          "selected_feature_indices_sha256": "8f5edcd82a4bea031fb69a1eca43a0679db72ef987c3acbd5c919d3f849c804f"
+        }
+      },
+      "feature_overlap": {
+        "logistic_ANOVA_vs_DCSL_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 49,
+          "jaccard": 0.05152471083070452
+        },
+        "matched_ANOVA_vs_Stable": {
+          "n_first": 500,
+          "n_second": 500,
+          "shared_genes": 49,
+          "jaccard": 0.05152471083070452
+        }
+      },
+      "dcsl_training_objective": {
+        "frozen_dcsl": {
+          "training_cross_entropy": 0.005198008824918494,
+          "training_l2_term": 0.014578588748628921,
+          "training_margin_variance": 0.0001292446885827175,
+          "gamma": 0.05,
+          "training_stability_term": 6.462234429135875e-06,
+          "training_total_objective": 0.01978305980797655
+        }
+      },
+      "per_model_heldout_DTP_recall_posthoc": {
+        "LogisticRegression": 0.3333333333333333,
+        "DCSL": 0.0,
+        "matched_anova_gamma0": 0.0,
+        "matched_stable_gamma0": 0.0,
+        "matched_anova_logistic_l2": 0.3333333333333333,
+        "matched_stable_logistic_l2": 0.0
+      },
+      "algebraic_regularization_comparison": {
+        "frozen_logistic_C": 0.01,
+        "outer_train_n": 27,
+        "matched_mean_CE_l2": 3.7037037037037033,
+        "original_dcsl_l2": 0.1,
+        "max_centered_logit_difference_logistic_vs_matched_ANOVA_l2": 0.004674545407528097,
+        "matched_ANOVA_l2_predictions_equal_frozen_logistic": true
+      },
+      "paired_error_counts": {
+        "both_correct": 6,
+        "logistic_only_correct": 1,
+        "dcsl_only_correct": 0,
+        "both_wrong": 2,
+        "prediction_disagreements": 1
+      },
+      "samples_posthoc": [
+        {
+          "gsm": "GSM5778041",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 1.0798886958900074,
+            "DCSL": 2.9726690475137003,
+            "matched_anova_gamma0": 1.0707512496211318,
+            "matched_stable_gamma0": 2.5903879652394415,
+            "matched_anova_logistic_l2": 1.0815796082504314,
+            "matched_stable_logistic_l2": 1.470377896664493
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778042",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 0.7281343680801382,
+            "DCSL": 1.6509799094815023,
+            "matched_anova_gamma0": 0.27049336300432136,
+            "matched_stable_gamma0": 1.2749069054741384,
+            "matched_anova_logistic_l2": 0.7297706406338091,
+            "matched_stable_logistic_l2": 0.75765096463256
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778043",
+          "actual": "Control",
+          "predicted": {
+            "LogisticRegression": "Control",
+            "DCSL": "Control",
+            "matched_anova_gamma0": "Control",
+            "matched_stable_gamma0": "Control",
+            "matched_anova_logistic_l2": "Control",
+            "matched_stable_logistic_l2": "Control"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 1.0901545454537955,
+            "DCSL": 3.1265093704546447,
+            "matched_anova_gamma0": 1.1428476935292036,
+            "matched_stable_gamma0": 2.7301079466495426,
+            "matched_anova_logistic_l2": 1.091880056065679,
+            "matched_stable_logistic_l2": 1.5019735453793586
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778047",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -4.003727260725492,
+            "DCSL": -9.917316397245445,
+            "matched_anova_gamma0": -9.467546592736907,
+            "matched_stable_gamma0": -10.245487479664332,
+            "matched_anova_logistic_l2": -4.003091379785199,
+            "matched_stable_logistic_l2": -5.312777959000028
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778048",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -5.394265353398312,
+            "DCSL": -10.894298113307425,
+            "matched_anova_gamma0": -12.356665083528569,
+            "matched_stable_gamma0": -11.37290624245172,
+            "matched_anova_logistic_l2": -5.393795059132714,
+            "matched_stable_logistic_l2": -5.925923940930368
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778049",
+          "actual": "Acute",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -3.5776164902035448,
+            "DCSL": -9.327894024655691,
+            "matched_anova_gamma0": -8.505260069849555,
+            "matched_stable_gamma0": -9.65224271403577,
+            "matched_anova_logistic_l2": -3.5770445690268162,
+            "matched_stable_logistic_l2": -5.02637549965539
+          },
+          "logistic_correct": true,
+          "dcsl_correct": true
+        },
+        {
+          "gsm": "GSM5778050",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -0.059476199211008995,
+            "DCSL": -2.9753372457831784,
+            "matched_anova_gamma0": -0.4981415495422159,
+            "matched_stable_gamma0": -2.949224509398398,
+            "matched_anova_logistic_l2": -0.05917893368909699,
+            "matched_stable_logistic_l2": -1.5674818448247305
+          },
+          "logistic_correct": false,
+          "dcsl_correct": false
+        },
+        {
+          "gsm": "GSM5778051",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "Acute",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "Acute",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": -0.06340280409669852,
+            "DCSL": -3.788819876001728,
+            "matched_anova_gamma0": -0.565885076495516,
+            "matched_stable_gamma0": -3.8614173471170448,
+            "matched_anova_logistic_l2": -0.06313124866872633,
+            "matched_stable_logistic_l2": -2.0519865706483316
+          },
+          "logistic_correct": false,
+          "dcsl_correct": false
+        },
+        {
+          "gsm": "GSM5778052",
+          "actual": "DTP",
+          "predicted": {
+            "LogisticRegression": "DTP",
+            "DCSL": "Acute",
+            "matched_anova_gamma0": "Acute",
+            "matched_stable_gamma0": "Acute",
+            "matched_anova_logistic_l2": "DTP",
+            "matched_stable_logistic_l2": "Acute"
+          },
+          "DTP_minus_Acute_logit": {
+            "LogisticRegression": 0.1416917275670181,
+            "DCSL": -3.1138160007997877,
+            "matched_anova_gamma0": -0.02684899807444907,
+            "matched_stable_gamma0": -3.0926812976287335,
+            "matched_anova_logistic_l2": 0.14189294505209094,
+            "matched_stable_logistic_l2": -1.6518983777382552
+          },
+          "logistic_correct": true,
+          "dcsl_correct": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Four source cell lines, including PC9, have already influenced prior investigations.",
+    "Post-hoc selector-by-regularization factorial ablations are NOT validated models or a new candidate search.",
+    "Sklearn Logistic regularization equivalence uses lambda = 1/(n_train*C); this is not a model chosen by held-out results.",
+    "Selected 18,013-gene universe was historically intersected with the target study.",
+    "Raw margins are different models' uncalibrated logits and cannot be compared as probabilities.",
+    "All source GEO state labels remain provisional pending independent biological verification.",
+    "Correlated training folds and 3 DTP replicates per line preclude causal attribution.",
+    "No target-study expression/outcomes were accessed, and no independent validation is claimed."
+  ]
+}
