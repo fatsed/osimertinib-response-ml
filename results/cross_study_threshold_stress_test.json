@@ -1,0 +1,614 @@
+{
+  "analysis": "exploratory_cross_study_threshold_transfer_not_independent_validation",
+  "source": "GSE193258",
+  "target": "GSE255958",
+  "n_aligned_genes": 18013,
+  "stage09_common_gene_input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "gse255958_common_log2tpm_candidate.tsv.gz": "e7c6a01cc20c83624e5eea7f4d585246870d2169d541a69f02e484f7b331f73b",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33"
+  },
+  "stage09_reference_report_sha256": "ba3f2cf842e36cf2059e0c8b60422f2bccb571e6957c55daf2e4361cb7c70c2b",
+  "training_settings": {
+    "PC9_excluded": "18 source Acute/DTP from 3 non-PC9 lines",
+    "PC9_included": "24 source Acute/DTP from all 4 lines"
+  },
+  "model_settings": {
+    "family": "LogisticRegression",
+    "C": 0.01,
+    "k": 500,
+    "variance_threshold": 1e-08,
+    "solver": "lbfgs",
+    "seed": 42
+  },
+  "variants": {
+    "FixedZero": "no adaptation, threshold=0",
+    "SourceInnerLOCO": "source-inner-cell-line-CV threshold; 3 folds if PC9 excluded, 4 if included",
+    "UnlabeledMedianAlign": "median(target batch scores) - median(training scores), no target labels"
+  },
+  "test_labels_used_for_fitting_feature_selection_or_threshold": false,
+  "target_cohort_selected_by_known_GEO_state_GSMs": true,
+  "target_batch_balanced_by_study_design": true,
+  "median_alignment_requires_entire_unlabeled_batch": true,
+  "posthoc_subsets_selected_using_target_labels_only_for_sensitivity": true,
+  "independent_validation": false,
+  "unseen_target_study": false,
+  "limitations": [
+    "GSE255958 has been inspected in previous stages; all results are developmental.",
+    "Source and target share 18,013 genes determined via target-informed gene ID intersection in Stage 08.",
+    "Existing Stage-08 scales are provisional (GEO source log2TPM vs log2(RSEM TPM + 0.01) target).",
+    "Not the identical 19,712-gene source-only feature universe used in Stage 35.",
+    "Acute and DTP durations/doses differ within and between the source and target studies.",
+    "Six target observations (three per state) yield very uncertain BA and ROC-AUC.",
+    "Batch-transductive median alignment benefits from balanced selected class composition.",
+    "Sensitivity subsets are chosen post hoc with labels and do not represent new validation cohorts.",
+    "No new algorithm novelty, clinical use, or independent generalization demonstrated."
+  ],
+  "settings_results": {
+    "PC9_excluded": {
+      "source_training_n": 18,
+      "source_training_lines": [
+        "H1975",
+        "HCC2935",
+        "HCC827"
+      ],
+      "target_n": 6,
+      "external_target_cell_line": "PC9",
+      "roc_auc_common_to_all_thresholds": 1.0,
+      "source_inner_validation": {
+        "source_cv_folds": 3,
+        "candidate_thresholds": 36,
+        "inner_mean_balanced_accuracy": 0.8888888888888888
+      },
+      "source_train_score_median": 0.3316768651194465,
+      "target_unlabeled_score_median": -2.886704449288241,
+      "variants": {
+        "FixedZero": {
+          "threshold": 0.0,
+          "metrics": {
+            "n": 6,
+            "balanced_accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "dtp_recall": 0.0,
+            "acute_recall": 1.0,
+            "confusion_matrix_Acute_DTP": [
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ]
+          },
+          "predictions": [
+            {
+              "gsm": "GSM8083377",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.051067460643152
+            },
+            {
+              "gsm": "GSM8083378",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.332737448372276
+            },
+            {
+              "gsm": "GSM8083379",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.3239574338569176
+            },
+            {
+              "gsm": "GSM8083380",
+              "actual": "DTP",
+              "predicted": "Acute",
+              "raw_DTP_logit": -1.208404079832638
+            },
+            {
+              "gsm": "GSM8083381",
+              "actual": "DTP",
+              "predicted": "Acute",
+              "raw_DTP_logit": -1.3867036633598588
+            },
+            {
+              "gsm": "GSM8083382",
+              "actual": "DTP",
+              "predicted": "Acute",
+              "raw_DTP_logit": -1.7223414379333302
+            }
+          ]
+        },
+        "SourceInnerLOCO": {
+          "threshold": -0.22115322853534528,
+          "metrics": {
+            "n": 6,
+            "balanced_accuracy": 0.5,
+            "macro_f1": 0.3333333333333333,
+            "dtp_recall": 0.0,
+            "acute_recall": 1.0,
+            "confusion_matrix_Acute_DTP": [
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ]
+          },
+          "predictions": [
+            {
+              "gsm": "GSM8083377",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.051067460643152
+            },
+            {
+              "gsm": "GSM8083378",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.332737448372276
+            },
+            {
+              "gsm": "GSM8083379",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.3239574338569176
+            },
+            {
+              "gsm": "GSM8083380",
+              "actual": "DTP",
+              "predicted": "Acute",
+              "raw_DTP_logit": -1.208404079832638
+            },
+            {
+              "gsm": "GSM8083381",
+              "actual": "DTP",
+              "predicted": "Acute",
+              "raw_DTP_logit": -1.3867036633598588
+            },
+            {
+              "gsm": "GSM8083382",
+              "actual": "DTP",
+              "predicted": "Acute",
+              "raw_DTP_logit": -1.7223414379333302
+            }
+          ]
+        },
+        "UnlabeledMedianAlign": {
+          "threshold": -3.218381314407688,
+          "metrics": {
+            "n": 6,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "dtp_recall": 1.0,
+            "acute_recall": 1.0,
+            "confusion_matrix_Acute_DTP": [
+              [
+                3,
+                0
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          "predictions": [
+            {
+              "gsm": "GSM8083377",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.051067460643152
+            },
+            {
+              "gsm": "GSM8083378",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.332737448372276
+            },
+            {
+              "gsm": "GSM8083379",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -4.3239574338569176
+            },
+            {
+              "gsm": "GSM8083380",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": -1.208404079832638
+            },
+            {
+              "gsm": "GSM8083381",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": -1.3867036633598588
+            },
+            {
+              "gsm": "GSM8083382",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": -1.7223414379333302
+            }
+          ]
+        }
+      },
+      "posthoc_sensitivity": {
+        "selection_uses_target_labels": true,
+        "for_posthoc_sensitivity_only": true,
+        "all_subsets_count": 49,
+        "by_class_counts": [
+          {
+            "acute_n": 1,
+            "dtp_n": 1,
+            "subsets": 9,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 1,
+            "dtp_n": 2,
+            "subsets": 9,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 1,
+            "dtp_n": 3,
+            "subsets": 3,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 2,
+            "dtp_n": 1,
+            "subsets": 9,
+            "median_align_ba_mean": 0.5,
+            "median_align_ba_min": 0.5,
+            "median_align_ba_max": 0.5,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 2,
+            "dtp_n": 2,
+            "subsets": 9,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 2,
+            "dtp_n": 3,
+            "subsets": 3,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 3,
+            "dtp_n": 1,
+            "subsets": 3,
+            "median_align_ba_mean": 0.5,
+            "median_align_ba_min": 0.5,
+            "median_align_ba_max": 0.5,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 3,
+            "dtp_n": 2,
+            "subsets": 3,
+            "median_align_ba_mean": 0.5,
+            "median_align_ba_min": 0.5,
+            "median_align_ba_max": 0.5,
+            "fixed_zero_ba_mean": 0.5
+          },
+          {
+            "acute_n": 3,
+            "dtp_n": 3,
+            "subsets": 1,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 0.5
+          }
+        ]
+      }
+    },
+    "PC9_included": {
+      "source_training_n": 24,
+      "source_training_lines": [
+        "H1975",
+        "HCC2935",
+        "HCC827",
+        "PC9"
+      ],
+      "target_n": 6,
+      "external_target_cell_line": "PC9",
+      "roc_auc_common_to_all_thresholds": 1.0,
+      "source_inner_validation": {
+        "source_cv_folds": 4,
+        "candidate_thresholds": 48,
+        "inner_mean_balanced_accuracy": 0.875
+      },
+      "source_train_score_median": 0.34544526711111023,
+      "target_unlabeled_score_median": -1.2151206404693142,
+      "variants": {
+        "FixedZero": {
+          "threshold": 0.0,
+          "metrics": {
+            "n": 6,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "dtp_recall": 1.0,
+            "acute_recall": 1.0,
+            "confusion_matrix_Acute_DTP": [
+              [
+                3,
+                0
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          "predictions": [
+            {
+              "gsm": "GSM8083377",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.1390617411214756
+            },
+            {
+              "gsm": "GSM8083378",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.3560188300621583
+            },
+            {
+              "gsm": "GSM8083379",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.43487479887459
+            },
+            {
+              "gsm": "GSM8083380",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 1.3260185358523227
+            },
+            {
+              "gsm": "GSM8083381",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 1.2388408136962206
+            },
+            {
+              "gsm": "GSM8083382",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 0.7088204601828474
+            }
+          ]
+        },
+        "SourceInnerLOCO": {
+          "threshold": 0.6319913168714646,
+          "metrics": {
+            "n": 6,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "dtp_recall": 1.0,
+            "acute_recall": 1.0,
+            "confusion_matrix_Acute_DTP": [
+              [
+                3,
+                0
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          "predictions": [
+            {
+              "gsm": "GSM8083377",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.1390617411214756
+            },
+            {
+              "gsm": "GSM8083378",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.3560188300621583
+            },
+            {
+              "gsm": "GSM8083379",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.43487479887459
+            },
+            {
+              "gsm": "GSM8083380",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 1.3260185358523227
+            },
+            {
+              "gsm": "GSM8083381",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 1.2388408136962206
+            },
+            {
+              "gsm": "GSM8083382",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 0.7088204601828474
+            }
+          ]
+        },
+        "UnlabeledMedianAlign": {
+          "threshold": -1.5605659075804246,
+          "metrics": {
+            "n": 6,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "dtp_recall": 1.0,
+            "acute_recall": 1.0,
+            "confusion_matrix_Acute_DTP": [
+              [
+                3,
+                0
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          "predictions": [
+            {
+              "gsm": "GSM8083377",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.1390617411214756
+            },
+            {
+              "gsm": "GSM8083378",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.3560188300621583
+            },
+            {
+              "gsm": "GSM8083379",
+              "actual": "Acute",
+              "predicted": "Acute",
+              "raw_DTP_logit": -3.43487479887459
+            },
+            {
+              "gsm": "GSM8083380",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 1.3260185358523227
+            },
+            {
+              "gsm": "GSM8083381",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 1.2388408136962206
+            },
+            {
+              "gsm": "GSM8083382",
+              "actual": "DTP",
+              "predicted": "DTP",
+              "raw_DTP_logit": 0.7088204601828474
+            }
+          ]
+        }
+      },
+      "posthoc_sensitivity": {
+        "selection_uses_target_labels": true,
+        "for_posthoc_sensitivity_only": true,
+        "all_subsets_count": 49,
+        "by_class_counts": [
+          {
+            "acute_n": 1,
+            "dtp_n": 1,
+            "subsets": 9,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 1,
+            "dtp_n": 2,
+            "subsets": 9,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 1,
+            "dtp_n": 3,
+            "subsets": 3,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 2,
+            "dtp_n": 1,
+            "subsets": 9,
+            "median_align_ba_mean": 0.5,
+            "median_align_ba_min": 0.5,
+            "median_align_ba_max": 0.5,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 2,
+            "dtp_n": 2,
+            "subsets": 9,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 2,
+            "dtp_n": 3,
+            "subsets": 3,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 3,
+            "dtp_n": 1,
+            "subsets": 3,
+            "median_align_ba_mean": 0.5,
+            "median_align_ba_min": 0.5,
+            "median_align_ba_max": 0.5,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 3,
+            "dtp_n": 2,
+            "subsets": 3,
+            "median_align_ba_mean": 0.5,
+            "median_align_ba_min": 0.5,
+            "median_align_ba_max": 0.5,
+            "fixed_zero_ba_mean": 1.0
+          },
+          {
+            "acute_n": 3,
+            "dtp_n": 3,
+            "subsets": 1,
+            "median_align_ba_mean": 1.0,
+            "median_align_ba_min": 1.0,
+            "median_align_ba_max": 1.0,
+            "fixed_zero_ba_mean": 1.0
+          }
+        ]
+      }
+    }
+  }
+}
