@@ -1,0 +1,228 @@
+{
+  "analysis": "diagnostic_only_frozen_stage35_binary_score_audit",
+  "source": "GSE193258",
+  "protocol_sha256": "044650b4b3b9278a8ef21d7816e0f4e001d6047b34c4772d66126c004a7f9bd6",
+  "stage35_report_sha256": "a4665057a26bc50dce0e8e32d77f063b1727d6019608ae7cd0bb96814659142e",
+  "no_hyperparameter_search": true,
+  "no_threshold_tuning": true,
+  "test_labels_used_only_for_posthoc_ranking_metrics": true,
+  "historically_inspected_folds": true,
+  "independent_validation": false,
+  "limitations": [
+    "Only 3 Acute and 3 DTP samples per held-out cell line: ROC-AUC is highly uncertain.",
+    "A high ROC-AUC does not license choosing a threshold from held-out labels.",
+    "Cell-line scores come from different fitted models; do not pool them as calibrated scores.",
+    "Acute 24h and DTP 21d are confounded with exposure duration.",
+    "This audit neither improves the classifier nor establishes an original method."
+  ],
+  "folds": [
+    {
+      "held_out_line": "H1975",
+      "n_test": 6,
+      "frozen_balanced_accuracy": 0.8333333333333333,
+      "frozen_dtp_recall": 1.0,
+      "roc_auc": 1.0,
+      "acute_mean_score": -0.08726266266101301,
+      "dtp_mean_score": 2.1128248220767953,
+      "acute_max_score": 0.3731019090426991,
+      "dtp_min_score": 1.412731116613728,
+      "rank_separation_gap_dtp_min_minus_acute_max": 1.039629207571029,
+      "acute_above_fixed_threshold_zero": 1,
+      "dtp_below_fixed_threshold_zero": 0,
+      "sample_scores": [
+        {
+          "gsm": "GSM5778002",
+          "actual": "Acute",
+          "predicted": "DTP",
+          "raw_logit_DTP": 0.3731019090426991
+        },
+        {
+          "gsm": "GSM5778003",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -0.08450619449698635
+        },
+        {
+          "gsm": "GSM5778004",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -0.5503837025287518
+        },
+        {
+          "gsm": "GSM5778005",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 1.9318553845956972
+        },
+        {
+          "gsm": "GSM5778006",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 2.9938879650209604
+        },
+        {
+          "gsm": "GSM5778007",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 1.412731116613728
+        }
+      ]
+    },
+    {
+      "held_out_line": "HCC2935",
+      "n_test": 6,
+      "frozen_balanced_accuracy": 1.0,
+      "frozen_dtp_recall": 1.0,
+      "roc_auc": 1.0,
+      "acute_mean_score": -1.345059622122627,
+      "dtp_mean_score": 3.6573634522409897,
+      "acute_max_score": -1.0784040715813046,
+      "dtp_min_score": 3.2781457498869875,
+      "rank_separation_gap_dtp_min_minus_acute_max": 4.356549821468292,
+      "acute_above_fixed_threshold_zero": 0,
+      "dtp_below_fixed_threshold_zero": 0,
+      "sample_scores": [
+        {
+          "gsm": "GSM5778017",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.6803393008477465
+        },
+        {
+          "gsm": "GSM5778018",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.2764354939388296
+        },
+        {
+          "gsm": "GSM5778019",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.0784040715813046
+        },
+        {
+          "gsm": "GSM5778020",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 3.6271318762420828
+        },
+        {
+          "gsm": "GSM5778021",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 3.2781457498869875
+        },
+        {
+          "gsm": "GSM5778022",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 4.066812730593898
+        }
+      ]
+    },
+    {
+      "held_out_line": "HCC827",
+      "n_test": 6,
+      "frozen_balanced_accuracy": 1.0,
+      "frozen_dtp_recall": 1.0,
+      "roc_auc": 1.0,
+      "acute_mean_score": -1.3838336995517586,
+      "dtp_mean_score": 1.2771657128093117,
+      "acute_max_score": -0.7105450040035557,
+      "dtp_min_score": 0.8072615006667808,
+      "rank_separation_gap_dtp_min_minus_acute_max": 1.5178065046703364,
+      "acute_above_fixed_threshold_zero": 0,
+      "dtp_below_fixed_threshold_zero": 0,
+      "sample_scores": [
+        {
+          "gsm": "GSM5778032",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.7363756750304822
+        },
+        {
+          "gsm": "GSM5778033",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.704580419621238
+        },
+        {
+          "gsm": "GSM5778034",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -0.7105450040035557
+        },
+        {
+          "gsm": "GSM5778035",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 1.6387905783228776
+        },
+        {
+          "gsm": "GSM5778036",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 1.3854450594382763
+        },
+        {
+          "gsm": "GSM5778037",
+          "actual": "DTP",
+          "predicted": "DTP",
+          "raw_logit_DTP": 0.8072615006667808
+        }
+      ]
+    },
+    {
+      "held_out_line": "PC9",
+      "n_test": 6,
+      "frozen_balanced_accuracy": 0.5,
+      "frozen_dtp_recall": 0.0,
+      "roc_auc": 1.0,
+      "acute_mean_score": -5.0639855929881445,
+      "dtp_mean_score": -1.1591248046254559,
+      "acute_max_score": -4.437208919519659,
+      "dtp_min_score": -1.456069142165385,
+      "rank_separation_gap_dtp_min_minus_acute_max": 2.9811397773542736,
+      "acute_above_fixed_threshold_zero": 0,
+      "dtp_below_fixed_threshold_zero": 3,
+      "sample_scores": [
+        {
+          "gsm": "GSM5778047",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -4.924748844508312
+        },
+        {
+          "gsm": "GSM5778048",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -5.829999014936463
+        },
+        {
+          "gsm": "GSM5778049",
+          "actual": "Acute",
+          "predicted": "Acute",
+          "raw_logit_DTP": -4.437208919519659
+        },
+        {
+          "gsm": "GSM5778050",
+          "actual": "DTP",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.0000789861567614
+        },
+        {
+          "gsm": "GSM5778051",
+          "actual": "DTP",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.456069142165385
+        },
+        {
+          "gsm": "GSM5778052",
+          "actual": "DTP",
+          "predicted": "Acute",
+          "raw_logit_DTP": -1.0212262855542211
+        }
+      ]
+    }
+  ]
+}
