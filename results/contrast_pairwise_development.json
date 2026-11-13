@@ -1,0 +1,1633 @@
+{
+  "analysis": "exploratory_previously_inspected_binary_source_loco",
+  "purpose": "Objective and ablation comparison, not method selection or independent validation",
+  "fixed_settings_no_search": {
+    "n_features": 500,
+    "l2": 0.1,
+    "alpha": 0.2,
+    "beta": 0.2,
+    "temperature": 0.5
+  },
+  "variant_definitions": {
+    "PlainBCE_L2": {
+      "alpha": 0.0,
+      "pairwise": "none",
+      "beta": 0.0
+    },
+    "PairwiseMean": {
+      "alpha": 0.2,
+      "pairwise": "mean",
+      "beta": 0.0
+    },
+    "PairwiseSoftWorst": {
+      "alpha": 0.2,
+      "pairwise": "soft_worst",
+      "beta": 0.0
+    },
+    "GroupBCE_SoftWorst": {
+      "alpha": 0.0,
+      "pairwise": "none",
+      "beta": 0.2
+    }
+  },
+  "source": "GSE193258",
+  "n_binary_source_samples": 24,
+  "previous_stage35_report_sha256": "a4665057a26bc50dce0e8e32d77f063b1727d6019608ae7cd0bb96814659142e",
+  "target_expression_or_labels_read": false,
+  "previously_inspected_folds": true,
+  "not_independent_validation": true,
+  "no_test_based_tuning": true,
+  "limitations": [
+    "Existing PC9 and other outer-fold outcomes were already inspected before this method was proposed.",
+    "Hyperparameters are illustrative and NOT a fair model-family search or proof of superiority.",
+    "Only four cell lines, with 3 biological-label replicates per arm and line.",
+    "Within-line pairwise samples share replicates; do not count pairs as independent observations.",
+    "Acute=24 h versus DTP=21 d; exposure time remains confounded with treatment state.",
+    "Group robustness and RankNet-style losses are pre-existing techniques.",
+    "No external dataset or new cell line was used."
+  ],
+  "summary": {
+    "LogisticRegression_Stage35": {
+      "pooled": {
+        "n": 24,
+        "balanced_accuracy": 0.8333333333333333,
+        "macro_f1": 0.8321678321678322,
+        "dtp_recall": 0.75,
+        "acute_recall": 0.9166666666666666,
+        "confusion_matrix_Acute_DTP": [
+          [
+            11,
+            1
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "per_line": {
+        "H1975": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC2935": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC827": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "PC9": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        }
+      },
+      "worst_line_balanced_accuracy": 0.5
+    },
+    "PlainBCE_L2": {
+      "pooled": {
+        "n": 24,
+        "balanced_accuracy": 0.8333333333333333,
+        "macro_f1": 0.8321678321678322,
+        "dtp_recall": 0.75,
+        "acute_recall": 0.9166666666666666,
+        "confusion_matrix_Acute_DTP": [
+          [
+            11,
+            1
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "per_line": {
+        "H1975": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC2935": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC827": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "PC9": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        }
+      },
+      "worst_line_balanced_accuracy": 0.5
+    },
+    "PairwiseMean": {
+      "pooled": {
+        "n": 24,
+        "balanced_accuracy": 0.8333333333333333,
+        "macro_f1": 0.8321678321678322,
+        "dtp_recall": 0.75,
+        "acute_recall": 0.9166666666666666,
+        "confusion_matrix_Acute_DTP": [
+          [
+            11,
+            1
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "per_line": {
+        "H1975": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC2935": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC827": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "PC9": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        }
+      },
+      "worst_line_balanced_accuracy": 0.5
+    },
+    "PairwiseSoftWorst": {
+      "pooled": {
+        "n": 24,
+        "balanced_accuracy": 0.8333333333333333,
+        "macro_f1": 0.8321678321678322,
+        "dtp_recall": 0.75,
+        "acute_recall": 0.9166666666666666,
+        "confusion_matrix_Acute_DTP": [
+          [
+            11,
+            1
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "per_line": {
+        "H1975": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC2935": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC827": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "PC9": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        }
+      },
+      "worst_line_balanced_accuracy": 0.5
+    },
+    "GroupBCE_SoftWorst": {
+      "pooled": {
+        "n": 24,
+        "balanced_accuracy": 0.8333333333333333,
+        "macro_f1": 0.8321678321678322,
+        "dtp_recall": 0.75,
+        "acute_recall": 0.9166666666666666,
+        "confusion_matrix_Acute_DTP": [
+          [
+            11,
+            1
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "per_line": {
+        "H1975": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC2935": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "HCC827": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "PC9": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        }
+      },
+      "worst_line_balanced_accuracy": 0.5
+    }
+  },
+  "folds_by_model": {
+    "LogisticRegression_Stage35": [
+      {
+        "held_out_line": "H1975",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778002",
+            "actual": "Acute",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778003",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778004",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778005",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778006",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778007",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC2935",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778017",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778018",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778019",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778020",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778021",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778022",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC827",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778032",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778033",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778034",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778035",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778036",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778037",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "PC9",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778047",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778048",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778049",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778050",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778051",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778052",
+            "actual": "DTP",
+            "predicted": "Acute"
+          }
+        ]
+      }
+    ],
+    "PlainBCE_L2": [
+      {
+        "held_out_line": "H1975",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "HCC2935": 9.97497940104142e-07,
+          "HCC827": 9.154036324795921e-06,
+          "PC9": 8.109134250978283e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778002",
+            "actual": "Acute",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778003",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778004",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778005",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778006",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778007",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC2935",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.008035810219133e-05,
+          "HCC827": 3.9458286718709725e-06,
+          "PC9": 3.691237846170433e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778017",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778018",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778019",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778020",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778021",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778022",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC827",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 3.5775702363500214e-05,
+          "HCC2935": 4.17785715513574e-07,
+          "PC9": 6.020940931213323e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778032",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778033",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778034",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778035",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778036",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778037",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "PC9",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.88603893262779e-05,
+          "HCC2935": 5.973021637536435e-07,
+          "HCC827": 7.199500395987013e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778047",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778048",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778049",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778050",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778051",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778052",
+            "actual": "DTP",
+            "predicted": "Acute"
+          }
+        ]
+      }
+    ],
+    "PairwiseMean": [
+      {
+        "held_out_line": "H1975",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "HCC2935": 9.957958496555136e-07,
+          "HCC827": 9.137307196285761e-06,
+          "PC9": 8.094784731329413e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778002",
+            "actual": "Acute",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778003",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778004",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778005",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778006",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778007",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC2935",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.0030457314495686e-05,
+          "HCC827": 3.938396211356271e-06,
+          "PC9": 3.684492071633309e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778017",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778018",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778019",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778020",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778021",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778022",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC827",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 3.565754336692539e-05,
+          "HCC2935": 4.16547010043077e-07,
+          "PC9": 6.0073539270408555e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778032",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778033",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778034",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778035",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778036",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778037",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "PC9",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.8775618160546e-05,
+          "HCC2935": 5.957800430958742e-07,
+          "HCC827": 7.18345471077952e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778047",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778048",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778049",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778050",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778051",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778052",
+            "actual": "DTP",
+            "predicted": "Acute"
+          }
+        ]
+      }
+    ],
+    "PairwiseSoftWorst": [
+      {
+        "held_out_line": "H1975",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "HCC2935": 9.957958903797011e-07,
+          "HCC827": 9.137307184522928e-06,
+          "PC9": 8.094784735607361e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778002",
+            "actual": "Acute",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778003",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778004",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778005",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778006",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778007",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC2935",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.003043775018934e-05,
+          "HCC827": 3.93837837418136e-06,
+          "PC9": 3.6844805868212443e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778017",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778018",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778019",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778020",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778021",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778022",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC827",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 3.5657539227336727e-05,
+          "HCC2935": 4.165471837745211e-07,
+          "PC9": 6.007358214372216e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778032",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778033",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778034",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778035",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778036",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778037",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "PC9",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.8775629620996122e-05,
+          "HCC2935": 5.9577902574633e-07,
+          "HCC827": 7.183458737375913e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778047",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778048",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778049",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778050",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778051",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778052",
+            "actual": "DTP",
+            "predicted": "Acute"
+          }
+        ]
+      }
+    ],
+    "GroupBCE_SoftWorst": [
+      {
+        "held_out_line": "H1975",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.8333333333333333,
+          "macro_f1": 0.8285714285714285,
+          "dtp_recall": 1.0,
+          "acute_recall": 0.6666666666666666,
+          "confusion_matrix_Acute_DTP": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "HCC2935": 7.039645862542625e-07,
+          "HCC827": 6.7485353780646575e-06,
+          "PC9": 5.991623751603069e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778002",
+            "actual": "Acute",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778003",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778004",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778005",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778006",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778007",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC2935",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 1.500458626619178e-05,
+          "HCC827": 2.853135370512975e-06,
+          "PC9": 2.6726218643323534e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778017",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778018",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778019",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778020",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778021",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778022",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "HCC827",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "dtp_recall": 1.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.6819799778144985e-05,
+          "HCC2935": 2.8267519411942113e-07,
+          "PC9": 4.396316363002455e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778032",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778033",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778034",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778035",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778036",
+            "actual": "DTP",
+            "predicted": "DTP"
+          },
+          {
+            "gsm": "GSM5778037",
+            "actual": "DTP",
+            "predicted": "DTP"
+          }
+        ]
+      },
+      {
+        "held_out_line": "PC9",
+        "metrics": {
+          "n": 6,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "dtp_recall": 0.0,
+          "acute_recall": 1.0,
+          "confusion_matrix_Acute_DTP": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ]
+        },
+        "training_pairwise_risks": {
+          "H1975": 2.1652222182976517e-05,
+          "HCC2935": 4.0982699635204396e-07,
+          "HCC827": 5.2622430493245356e-06
+        },
+        "predictions": [
+          {
+            "gsm": "GSM5778047",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778048",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778049",
+            "actual": "Acute",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778050",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778051",
+            "actual": "DTP",
+            "predicted": "Acute"
+          },
+          {
+            "gsm": "GSM5778052",
+            "actual": "DTP",
+            "predicted": "Acute"
+          }
+        ]
+      }
+    ]
+  }
+}
