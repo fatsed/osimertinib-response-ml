@@ -6,3 +6,5 @@ GSE202859,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE202859,candidate
 GSE335846,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335846,candidate,Audit cell-cycle labels and time points
 GSE282074,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282074,candidate,Check cell-level versus sample-level independence
 GSE150949,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150949,candidate,Audit cell-level metadata and sample replication
+GSE243565,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243565,candidate,Stage 37 expression matrix already local; ASCL1 perturbation and expression-scale mismatch; metadata only
+GSE341996,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341996,candidate,OmicsDI TPM file listed; sample groups and replicates not yet verified; metadata only

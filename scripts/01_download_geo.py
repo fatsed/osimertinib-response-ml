@@ -68,7 +68,9 @@ def candidate_files() -> list[FileSpec]:
                  "sample_metadata", 1.1, optional=True),
     ]
     # SOFT family files preserve the GEO titles and submitter sample annotations.
-    series = sorted({item.accession for item in expression_files})
+    # These two studies are metadata-only here; do not fetch expression matrices.
+    series = sorted({item.accession for item in expression_files}
+                    | {"GSE243565", "GSE341996"})
     soft_files = [FileSpec(acc, f"{acc}_family.soft.gz", "soft") for acc in series]
     return soft_files + expression_files
 
@@ -237,7 +239,7 @@ def main() -> int:
     known_mb = sum(s.approx_mb or 0 for s in specs)
     print(f"Known listed file sizes total ~{known_mb:.0f} MB, PLUS GEO SOFT metadata.")
     if not args.download:
-        print("\nPreview only. To download: python scripts/download_geo.py --download")
+        print("\nPreview only. To download: python scripts/01_download_geo.py --download")
         return 0
 
     print("\nDownloading. Existing files are not overwritten; .part files allow resume.")
