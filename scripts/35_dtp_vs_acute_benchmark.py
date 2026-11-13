@@ -19,13 +19,9 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.dummy import DummyClassifier
-from sklearn.feature_selection import SelectKBest, VarianceThreshold, f_classif
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import balanced_accuracy_score, confusion_matrix, f1_score, recall_score
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import LinearSVC
+from osimertinib_ml.data.cohorts import select_frozen_rows, validate_binary_cohort
+from osimertinib_ml.evaluation.metrics import binary_metrics as metrics
+from osimertinib_ml.models.baselines import make_binary_model as make_model
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGE34_SCRIPT = Path("scripts/34_source_only_rebaseline.py")
@@ -54,75 +50,6 @@ def import_stage34(root: Path):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
-
-
-def validate_binary_cohort(meta: pd.DataFrame, folds: list[dict]) -> pd.DataFrame:
-    """The binary experiment must be an exact subset of Stage 31's source GSMs."""
-    if not {"gsm", "cell_line", "state"}.issubset(meta) or meta.gsm.duplicated().any():
-        raise ValueError("Invalid source metadata")
-    if len(folds) != 4 or len({f["outer_test_cell_line"] for f in folds}) != 4:
-        raise ValueError("Expected four distinct frozen outer folds")
-    expected = {gsm for f in folds for gsm in f["outer_test_gsm"]}
-    if len(expected) != 36 or set(meta.gsm) != expected:
-        raise ValueError("Stage-31 source GSM identity mismatch")
-    subset = meta.loc[meta.state.isin(STATES)].copy()
-    if len(subset) != 24 or set(subset.state) != set(STATES):
-        raise ValueError("Expected 24 Acute/DTP samples")
-    if set(subset.cell_line) != {f["outer_test_cell_line"] for f in folds}:
-        raise ValueError("Cell-line identities do not match frozen folds")
-    count = subset.groupby(["cell_line", "state"]).size()
-    if len(count) != 8 or not count.eq(3).all():
-        raise ValueError("Need exactly 3 Acute and 3 DTP samples per cell line")
-    return subset
-
-
-def select_frozen_rows(fold: dict, metadata: pd.DataFrame) -> tuple[list[str], list[str], list[tuple[list[str], list[str]]]]:
-    lookup = metadata.set_index("gsm")["state"].to_dict()
-    def keep(ids):
-        if any(g not in lookup for g in ids):
-            raise ValueError("GSM absent from source-only metadata")
-        return [g for g in ids if lookup[g] in STATES]
-    train, test = keep(fold["outer_train_gsm"]), keep(fold["outer_test_gsm"])
-    if len(train) != 18 or len(test) != 6 or set(train) & set(test):
-        raise ValueError("Invalid binary outer split")
-    inners = [(keep(f["train_gsm"]), keep(f["validation_gsm"])) for f in fold["inner_folds"]]
-    if len(inners) != 3:
-        raise ValueError("Expected exactly three inner folds")
-    for a, b in inners:
-        if len(a) != 12 or len(b) != 6 or set(a) & set(b) or (set(a) | set(b)) != set(train):
-            raise ValueError("Inner-fold overlap, missing rows or outer-test leakage")
-    return train, test, inners
-
-
-def make_model(family: str):
-    if family == "Dummy":
-        return DummyClassifier(strategy="most_frequent")
-    if family == "LogisticRegression":
-        classifier = LogisticRegression(C=0.01, solver="lbfgs", max_iter=3000, random_state=SEED)
-    elif family == "LinearSVM":
-        classifier = LinearSVC(C=0.001, max_iter=20000, dual=True, random_state=SEED)
-    else:
-        raise ValueError("Unknown frozen baseline")
-    return Pipeline([
-        ("variance", VarianceThreshold(threshold=1e-8)),
-        ("anova", SelectKBest(score_func=f_classif, k=N_FEATURES)),
-        ("standardize", StandardScaler()),
-        ("classifier", classifier),
-    ])
-
-
-def metrics(y: np.ndarray, pred: np.ndarray) -> dict:
-    y, pred = np.asarray(y, dtype=str), np.asarray(pred, dtype=str)
-    if len(y) != len(pred) or not len(y) or set(y) != set(STATES) or not set(pred).issubset(STATES):
-        raise ValueError("Binary scores require both true states and valid predictions")
-    return {
-        "n": len(y),
-        "balanced_accuracy": float(balanced_accuracy_score(y, pred)),
-        "macro_f1": float(f1_score(y, pred, labels=STATES, average="macro", zero_division=0)),
-        "dtp_recall": float(recall_score(y, pred, pos_label="DTP")),
-        "acute_recall": float(recall_score(y, pred, pos_label="Acute")),
-        "confusion_matrix_Acute_DTP": confusion_matrix(y, pred, labels=STATES).tolist(),
-    }
 
 
 def evaluate(x: np.ndarray, metadata: pd.DataFrame, folds: list[dict]) -> dict:

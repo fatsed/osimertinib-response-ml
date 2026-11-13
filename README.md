@@ -2,7 +2,7 @@
 
 Reproducible computational research on **EGFR-mutant NSCLC** response to **osimertinib**, using public transcriptomic datasets and machine learning.
 
-> **Research status:** feasibility and dataset audit. The final research question, base paper, model, and results have **not** been selected or validated yet.
+> **Research status:** exploratory computational development and source-only leave-one-cell-line-out benchmarking. Some results are available, but there is no established new-model superiority or independent external validation. The Acute/DTP labels differ in treatment duration.
 
 ## Project goals
 
@@ -23,10 +23,25 @@ docs/                    Research decisions, literature tracking, data dictionar
 src/osimertinib_ml/      Reusable data, feature, model, and evaluation code
 scripts/                 Executable data checks and experiments
 experiments/             Experiment logs and settings
-results/                 Metrics and summaries (no results yet)
+results/                 Exploratory metrics, diagnostics, and locked protocols
 figures/                 Figures generated from verified experiments
 tests/                   Basic automated checks
 ```
+
+## Reusable binary benchmark code
+
+The Stage-35 Acute/DTP benchmark reuses four small modules instead of keeping
+all preprocessing, models, split checks and metrics in one script:
+
+- `src/osimertinib_ml/data/cohorts.py` — frozen GSM, state, and nested LOCO split checks
+- `src/osimertinib_ml/features/selection.py` — unfitted training-fold feature steps
+- `src/osimertinib_ml/models/baselines.py` — frozen Logistic/SVM/Dummy estimators
+- `src/osimertinib_ml/evaluation/metrics.py` — reproducible binary scoring
+
+`scripts/35_dtp_vs_acute_benchmark.py` retains the historical CLI and output
+schema. The specialized DCSL, VREx, group-robust and pairwise research methods
+remain in the package root to avoid breaking earlier experiments. This code
+organization is not a new scientific result.
 
 ## Quick start (Windows / VS Code)
 
@@ -58,4 +73,4 @@ Public GEO accessions currently under review: GSE193258, GSE255958, GSE254485, G
 - Use held-out sets honestly; datasets inspected during method development are not untouched external validation.
 - Research papers and manuscript drafts are kept in the parent `Osimertinib_Research` folder and are not uploaded to this code repository by default.
 
-No model results have been produced in this repository yet.
+See `results/dcsl_stage35_binary_dtp_acute_loco.json` and related reports for exploratory results. These do not demonstrate biological causality or population-level generalization.
