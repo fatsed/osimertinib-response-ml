@@ -1,0 +1,653 @@
+{
+  "analysis": "stage29_provenance_and_expression_scale_audit",
+  "source": "GSE193258",
+  "target": "GSE255958",
+  "source_n": 36,
+  "target_n": 12,
+  "target_candidate_n": 9,
+  "genes": 18013,
+  "input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "gse255958_common_log2tpm_candidate.tsv.gz": "e7c6a01cc20c83624e5eea7f4d585246870d2169d541a69f02e484f7b331f73b",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33"
+  },
+  "all_48_label_review_counts": {
+    "GSE193258:PENDING_MANUAL_AND_MATRIX_CHECK": 36,
+    "GSE255958:PENDING_MANUAL_AND_MATRIX_CHECK": 12
+  },
+  "all_48_labels_pending_manual_review": true,
+  "protocol_documentation_from_GEO": {
+    "source": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193258",
+      "control": "DMSO 24 h following 21 days drug-free",
+      "acute": "500 nM osimertinib 24 h",
+      "DTP": "500 nM osimertinib 21 days"
+    },
+    "target": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE255958",
+      "control": "0.1% DMSO 48 h",
+      "acute": "osimertinib 48 h; candidate PC9 metadata list 2 uM",
+      "DTP": "osimertinib >=9 days; candidate PC9 metadata list 2 uM and 9 d"
+    }
+  },
+  "scale_provenance": {
+    "source": "GEO-supplied log2TPM; exact transform/pseudocount not independently established",
+    "target": "Stage-08 candidate log2(RSEM gene TPM + 0.01)",
+    "candidate_floor_log2_0_01": -6.643856189774724,
+    "source_minimum": -6.64385618977472,
+    "target_minimum": -6.643856189774724,
+    "same_floor_does_not_prove_same_scale": true
+  },
+  "sample_scale_summaries": [
+    {
+      "gsm": "GSM5778002",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "Acute",
+      "median": 2.8606994546749,
+      "q10": -6.64385618977472,
+      "q90": 6.042634230458295,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1281851995780825
+    },
+    {
+      "gsm": "GSM5778003",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "Acute",
+      "median": 2.87821721935738,
+      "q10": -6.64385618977472,
+      "q90": 6.050348518504423,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.13201576639093987
+    },
+    {
+      "gsm": "GSM5778004",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "Acute",
+      "median": 2.93214245297238,
+      "q10": -6.64385618977472,
+      "q90": 6.0343806652194285,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.12574251929162272
+    },
+    {
+      "gsm": "GSM5777996",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "Control",
+      "median": 2.8135829705376,
+      "q10": -6.64385618977472,
+      "q90": 6.202375873257984,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1406761783156609
+    },
+    {
+      "gsm": "GSM5777997",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "Control",
+      "median": 2.78952477685155,
+      "q10": -6.64385618977472,
+      "q90": 6.247461971990933,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.14500638427802143
+    },
+    {
+      "gsm": "GSM5777998",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "Control",
+      "median": 2.76761666482481,
+      "q10": -6.64385618977472,
+      "q90": 6.1792768825736575,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1461166934991395
+    },
+    {
+      "gsm": "GSM5778005",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "DTP",
+      "median": 2.82236733844483,
+      "q10": -6.64385618977472,
+      "q90": 6.117441452345853,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.12785210681174708
+    },
+    {
+      "gsm": "GSM5778006",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "DTP",
+      "median": 2.78911949782231,
+      "q10": -6.64385618977472,
+      "q90": 6.140497531545096,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1308499417087659
+    },
+    {
+      "gsm": "GSM5778007",
+      "accession": "GSE193258",
+      "cell_line": "H1975",
+      "state": "DTP",
+      "median": 2.75241682104755,
+      "q10": -6.64385618977472,
+      "q90": 6.0296315099976745,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.13301504468994615
+    },
+    {
+      "gsm": "GSM5778017",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "Acute",
+      "median": 2.89127111829464,
+      "q10": -6.64385618977472,
+      "q90": 6.2554472209334575,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.14933659024038196
+    },
+    {
+      "gsm": "GSM5778018",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "Acute",
+      "median": 2.91809041346983,
+      "q10": -6.64385618977472,
+      "q90": 6.239102482756181,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1461166934991395
+    },
+    {
+      "gsm": "GSM5778019",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "Acute",
+      "median": 3.05440223154315,
+      "q10": -6.64385618977472,
+      "q90": 6.349146733521663,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1402875700882696
+    },
+    {
+      "gsm": "GSM5778011",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "Control",
+      "median": 2.94666162408663,
+      "q10": -6.64385618977472,
+      "q90": 6.383819208797027,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.155665352800755
+    },
+    {
+      "gsm": "GSM5778012",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "Control",
+      "median": 2.93237266305824,
+      "q10": -6.64385618977472,
+      "q90": 6.401406301077724,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.16160550713373675
+    },
+    {
+      "gsm": "GSM5778013",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "Control",
+      "median": 3.01069549411614,
+      "q10": -6.64385618977472,
+      "q90": 6.3953128116983775,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.16071725975684228
+    },
+    {
+      "gsm": "GSM5778020",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "DTP",
+      "median": 3.16890513655203,
+      "q10": -6.64385618977472,
+      "q90": 6.4402157433735825,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1379004052628657
+    },
+    {
+      "gsm": "GSM5778021",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "DTP",
+      "median": 3.22394161051346,
+      "q10": -6.64385618977472,
+      "q90": 6.404906589631901,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.13562427135957364
+    },
+    {
+      "gsm": "GSM5778022",
+      "accession": "GSE193258",
+      "cell_line": "HCC2935",
+      "state": "DTP",
+      "median": 3.19807437929278,
+      "q10": -6.64385618977472,
+      "q90": 6.43979529577516,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.14378504413479154
+    },
+    {
+      "gsm": "GSM5778032",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "Acute",
+      "median": 2.71466767958584,
+      "q10": -6.64385618977472,
+      "q90": 5.9975851448335575,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.16388164103702882
+    },
+    {
+      "gsm": "GSM5778033",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "Acute",
+      "median": 2.79831185640824,
+      "q10": -6.64385618977472,
+      "q90": 6.036540802381389,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.15805251762615888
+    },
+    {
+      "gsm": "GSM5778034",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "Acute",
+      "median": 2.81164391751195,
+      "q10": -6.64385618977472,
+      "q90": 6.087942694982057,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.16132792982845723
+    },
+    {
+      "gsm": "GSM5778026",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "Control",
+      "median": 2.64956832642365,
+      "q10": -6.64385618977472,
+      "q90": 6.121194154488789,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1746516404818742
+    },
+    {
+      "gsm": "GSM5778027",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "Control",
+      "median": 2.5403149857942,
+      "q10": -6.64385618977472,
+      "q90": 6.168486410366208,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.18725365014156442
+    },
+    {
+      "gsm": "GSM5778028",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "Control",
+      "median": 2.63259464649301,
+      "q10": -6.64385618977472,
+      "q90": 6.040479110699296,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.16571365125187365
+    },
+    {
+      "gsm": "GSM5778035",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "DTP",
+      "median": 2.92972738141658,
+      "q10": -6.64385618977472,
+      "q90": 6.05323973614564,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.14633875534336313
+    },
+    {
+      "gsm": "GSM5778036",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "DTP",
+      "median": 2.88926500837976,
+      "q10": -6.64385618977472,
+      "q90": 5.971768845108665,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.15105756953311497
+    },
+    {
+      "gsm": "GSM5778037",
+      "accession": "GSE193258",
+      "cell_line": "HCC827",
+      "state": "DTP",
+      "median": 2.78735514535851,
+      "q10": -6.64385618977472,
+      "q90": 5.948074815435074,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1555543218786432
+    },
+    {
+      "gsm": "GSM5778047",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "Acute",
+      "median": 2.48095527877013,
+      "q10": -6.64385618977472,
+      "q90": 6.080576199836108,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.15877421861988564
+    },
+    {
+      "gsm": "GSM5778048",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "Acute",
+      "median": 2.386214270081,
+      "q10": -6.64385618977472,
+      "q90": 6.024214327618404,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1512796313773386
+    },
+    {
+      "gsm": "GSM5778049",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "Acute",
+      "median": 2.48894811235634,
+      "q10": -6.64385618977472,
+      "q90": 6.101643939766692,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.15910731138622106
+    },
+    {
+      "gsm": "GSM5778041",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "Control",
+      "median": 2.38107622982359,
+      "q10": -6.64385618977472,
+      "q90": 6.169273557646762,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1855326708488314
+    },
+    {
+      "gsm": "GSM5778042",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "Control",
+      "median": 2.4587549671608,
+      "q10": -6.64385618977472,
+      "q90": 6.143020979164852,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1719313828901349
+    },
+    {
+      "gsm": "GSM5778043",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "Control",
+      "median": 2.38189188977565,
+      "q10": -6.64385618977472,
+      "q90": 6.138939421458558,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.18742019652473213
+    },
+    {
+      "gsm": "GSM5778050",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "DTP",
+      "median": 2.8067899170561,
+      "q10": -6.64385618977472,
+      "q90": 6.215808714675888,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.13962138455559872
+    },
+    {
+      "gsm": "GSM5778051",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "DTP",
+      "median": 2.84242458969355,
+      "q10": -6.64385618977472,
+      "q90": 6.221927690485002,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.13806695164603341
+    },
+    {
+      "gsm": "GSM5778052",
+      "accession": "GSE193258",
+      "cell_line": "PC9",
+      "state": "DTP",
+      "median": 2.89583732773226,
+      "q10": -6.64385618977472,
+      "q90": 6.235277885521546,
+      "minimum": -6.64385618977472,
+      "fraction_at_candidate_0_01_floor": 0.1296841170265919
+    },
+    {
+      "gsm": "GSM8083374",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Control",
+      "median": 2.4436066514756147,
+      "q10": -6.643856189774724,
+      "q90": 6.329446549783511,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.25070782212846277
+    },
+    {
+      "gsm": "GSM8083375",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Control",
+      "median": 2.37851162325373,
+      "q10": -6.643856189774724,
+      "q90": 6.295318728048124,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.2510409148947982
+    },
+    {
+      "gsm": "GSM8083376",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Control",
+      "median": 2.424922088210688,
+      "q10": -6.643856189774724,
+      "q90": 6.295429046920879,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.2513740076611336
+    },
+    {
+      "gsm": "GSM8083377",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Acute",
+      "median": 2.472487771462744,
+      "q10": -6.643856189774724,
+      "q90": 6.35522774451013,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.23677344140343085
+    },
+    {
+      "gsm": "GSM8083378",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Acute",
+      "median": 2.4276061727818994,
+      "q10": -6.643856189774724,
+      "q90": 6.331597739393225,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.22400488536057292
+    },
+    {
+      "gsm": "GSM8083379",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Acute",
+      "median": 2.454175893185802,
+      "q10": -6.643856189774724,
+      "q90": 6.344650989148446,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.23222117359684671
+    },
+    {
+      "gsm": "GSM8083380",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "DTP",
+      "median": 2.6182386555954547,
+      "q10": -6.643856189774724,
+      "q90": 6.4047328480376855,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.22855715316715705
+    },
+    {
+      "gsm": "GSM8083381",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "DTP",
+      "median": 2.6644828403646823,
+      "q10": -6.643856189774724,
+      "q90": 6.396536277143508,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.2384944206961639
+    },
+    {
+      "gsm": "GSM8083382",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "DTP",
+      "median": 2.59215800212536,
+      "q10": -6.643856189774724,
+      "q90": 6.363065905254337,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.24193637928162992
+    },
+    {
+      "gsm": "GSM8083383",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Resistant",
+      "median": 2.6667565918848037,
+      "q10": -6.643856189774724,
+      "q90": 6.4589067262924225,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.20807194803752846
+    },
+    {
+      "gsm": "GSM8083384",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Resistant",
+      "median": 2.543495883425772,
+      "q10": -6.643856189774724,
+      "q90": 6.491596581580221,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.21106978293454728
+    },
+    {
+      "gsm": "GSM8083385",
+      "accession": "GSE255958",
+      "cell_line": "PC9",
+      "state": "Resistant",
+      "median": 2.700439718141092,
+      "q10": -6.643856189774724,
+      "q90": 6.450650338869333,
+      "minimum": -6.643856189774724,
+      "fraction_at_candidate_0_01_floor": 0.21712096818964083
+    }
+  ],
+  "candidate_floor_fraction_by_study_and_state": {
+    "GSE193258": {
+      "Control": {
+        "n": 12,
+        "median": 0.16365957919280522,
+        "min": 0.1406761783156609,
+        "max": 0.18742019652473213
+      },
+      "Acute": {
+        "n": 12,
+        "median": 0.15030811080886028,
+        "min": 0.12574251929162272,
+        "max": 0.16388164103702882
+      },
+      "DTP": {
+        "n": 12,
+        "median": 0.13798367845444956,
+        "min": 0.12785210681174708,
+        "max": 0.1555543218786432
+      }
+    },
+    "GSE255958": {
+      "Control": {
+        "n": 3,
+        "median": 0.2510409148947982,
+        "min": 0.25070782212846277,
+        "max": 0.2513740076611336
+      },
+      "Acute": {
+        "n": 3,
+        "median": 0.23222117359684671,
+        "min": 0.22400488536057292,
+        "max": 0.23677344140343085
+      },
+      "DTP": {
+        "n": 3,
+        "median": 0.2384944206961639,
+        "min": 0.22855715316715705,
+        "max": 0.24193637928162992
+      }
+    }
+  },
+  "pc9_unpaired_state_comparisons": {
+    "Control": {
+      "source_n": 3,
+      "target_n": 3,
+      "median_abs_gene_mean_difference_in_log2_units": 0.6824275351468465,
+      "q90_abs_gene_mean_difference_in_log2_units": 2.7635643448707143,
+      "gene_mean_spearman_rho": 0.9343103415239883,
+      "interpretation": "Unpaired post-hoc contrast; confounds processing, dose, time, batch, and biology"
+    },
+    "Acute": {
+      "source_n": 3,
+      "target_n": 3,
+      "median_abs_gene_mean_difference_in_log2_units": 0.7629055491495818,
+      "q90_abs_gene_mean_difference_in_log2_units": 2.918529052485468,
+      "gene_mean_spearman_rho": 0.9278672443932344,
+      "interpretation": "Unpaired post-hoc contrast; confounds processing, dose, time, batch, and biology"
+    },
+    "DTP": {
+      "source_n": 3,
+      "target_n": 3,
+      "median_abs_gene_mean_difference_in_log2_units": 0.772398603165195,
+      "q90_abs_gene_mean_difference_in_log2_units": 3.2104540843478273,
+      "gene_mean_spearman_rho": 0.9272049877187181,
+      "interpretation": "Unpaired post-hoc contrast; confounds processing, dose, time, batch, and biology"
+    }
+  },
+  "data_usage": {
+    "new_model_fitted": false,
+    "normalization_or_batch_correction_performed": false,
+    "labels_used_for_posthoc_descriptive_comparison_only": true,
+    "target_has_been_inspected_previously": true,
+    "independent_validation": false
+  },
+  "unresolved_before_cross_study_claims": [
+    "Manually review/record provenance of all sample state labels and biological replicates",
+    "Verify exact source expression transformation and gene annotation versions",
+    "Reconcile treatment dose, durations, sequencing/quantification protocols and batch",
+    "Do not use post-hoc target diagnostics to select a new model or tune preprocessing"
+  ],
+  "decision": "KEEP_CROSS_STUDY_VALIDATION_PROVISIONAL"
+}
