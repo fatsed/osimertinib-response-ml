@@ -52,3 +52,6 @@ Thumbs.db
 /data/metadata/audit/
 /data/metadata/review/
 /data/metadata/mapping/
+# Local reference data and preflight reports
+/data/reference/
+/results/stage37_gse243565_preflight.json
