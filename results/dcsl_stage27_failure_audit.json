@@ -1,0 +1,553 @@
+{
+  "analysis": "stage27_posthoc_cross_cell_line_failure_audit",
+  "source": "GSE193258",
+  "samples": 36,
+  "genes": 18013,
+  "input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "gse255958_common_log2tpm_candidate.tsv.gz": "e7c6a01cc20c83624e5eea7f4d585246870d2169d541a69f02e484f7b331f73b",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33"
+  },
+  "stage26_selection_hashes_verified": true,
+  "number_of_genes_selected_per_fold": 500,
+  "hallmark_reference": "results\\gse193258_full_cell_cycle_sets.json",
+  "heldout_cell_lines": [
+    "H1975",
+    "HCC2935",
+    "HCC827",
+    "PC9"
+  ],
+  "no_model_training_or_parameter_tuning": true,
+  "heldout_labels_used_only_for_posthoc_diagnostics": true,
+  "not_independent_validation": true,
+  "limitations": [
+    "The held-out data and PC9 have been repeatedly inspected; results are exploratory.",
+    "Labels were used only to compute post-hoc contrasts and per-state centroid shifts, never to select genes.",
+    "Each cell line has only three replicates per state; no formal uncertainty or causal claim.",
+    "Cycle annotation overlap is descriptive, not evidence that cell cycle causes prediction errors.",
+    "Standardization and feature selection come only from each training fold.",
+    "Cross-study expression-scale and biological label validation remain provisional."
+  ],
+  "stage26_overlap_reference": {
+    "anova": 0.38413886424034266,
+    "stable": 0.18480274369864705
+  },
+  "selectors": {
+    "anova": {
+      "H1975": {
+        "selection_sha256": "70396a027fd097d6f03351c161abaf44427c836ab17a8cbb850404474713ec73",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.774,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 0.939426220355265,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5922493970380218,
+            "heldout_to_training_reference_ratio": 1.5862003829021287,
+            "training_reference_per_group": {
+              "HCC2935": 0.5948480768057867,
+              "HCC827": 0.5573867024521028,
+              "PC9": 0.6245134118561761
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.0161368528855435,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5692303396620685,
+            "heldout_to_training_reference_ratio": 1.7851066292228683,
+            "training_reference_per_group": {
+              "HCC2935": 0.5535065840893858,
+              "HCC827": 0.5730296889973464,
+              "PC9": 0.5811547458994732
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 1.1111326518161633,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5891469439572066,
+            "heldout_to_training_reference_ratio": 1.8860025723851872,
+            "training_reference_per_group": {
+              "HCC2935": 0.584139457132915,
+              "HCC827": 0.5962977715206346,
+              "PC9": 0.58700360321807
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 68,
+            "fraction_of_selected": 0.136,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 13.100363636363637,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 82,
+            "fraction_of_selected": 0.164,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 15.149394871794872,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 114,
+            "fraction_of_selected": 0.228,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 13.163346153846152,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      },
+      "HCC2935": {
+        "selection_sha256": "9a26f81bd0e942e45ae16dabb8756063b89e3739c253d1ce9754830be73745eb",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.772,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 1.271270978910479,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5520752949686375,
+            "heldout_to_training_reference_ratio": 2.302713036602549,
+            "training_reference_per_group": {
+              "H1975": 0.5016664572501384,
+              "HCC827": 0.5286709037194376,
+              "PC9": 0.6258885239363368
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.137576934317274,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5366218593769317,
+            "heldout_to_training_reference_ratio": 2.1198855664174907,
+            "training_reference_per_group": {
+              "H1975": 0.5125788439441752,
+              "HCC827": 0.5467975638457181,
+              "PC9": 0.5504891703409018
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 1.1900779479893973,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5451900649011542,
+            "heldout_to_training_reference_ratio": 2.182868002565609,
+            "training_reference_per_group": {
+              "H1975": 0.5293178162572254,
+              "HCC827": 0.5017518495835191,
+              "PC9": 0.6045005288627181
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 66,
+            "fraction_of_selected": 0.132,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 12.715058823529413,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 77,
+            "fraction_of_selected": 0.154,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 14.225651282051281,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 108,
+            "fraction_of_selected": 0.216,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 12.47053846153846,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      },
+      "HCC827": {
+        "selection_sha256": "29341a33f33632bb4df2b10268861cf7c4bcc585e89e4dcc8526b90c433b5a78",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.818,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 1.0309698982052373,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5790266796734126,
+            "heldout_to_training_reference_ratio": 1.7805222702116825,
+            "training_reference_per_group": {
+              "H1975": 0.5003794606875717,
+              "HCC2935": 0.6101398608418518,
+              "PC9": 0.6265607174908142
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.060360340551012,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5438889369435483,
+            "heldout_to_training_reference_ratio": 1.949589830802294,
+            "training_reference_per_group": {
+              "H1975": 0.5307272138864576,
+              "HCC2935": 0.5629393400939954,
+              "PC9": 0.538000256850192
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 0.9894937647979165,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5720296460143813,
+            "heldout_to_training_reference_ratio": 1.729794551195411,
+            "training_reference_per_group": {
+              "H1975": 0.5664591231249326,
+              "HCC2935": 0.5679192322706661,
+              "PC9": 0.5817105826475454
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 68,
+            "fraction_of_selected": 0.136,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 13.100363636363637,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 77,
+            "fraction_of_selected": 0.154,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 14.225651282051281,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 109,
+            "fraction_of_selected": 0.218,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 12.58600641025641,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      },
+      "PC9": {
+        "selection_sha256": "6ceba0dd2277ba1740008919767e02ee7ad3d892cbd2ba66193b2230f4b5f2b3",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.8496993987975952,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 1.5116456309585822,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5322580635041613,
+            "heldout_to_training_reference_ratio": 2.840061493867371,
+            "training_reference_per_group": {
+              "H1975": 0.48660758382657404,
+              "HCC2935": 0.5802705204038451,
+              "HCC827": 0.5298960862820647
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.493733490758238,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5595178904507753,
+            "heldout_to_training_reference_ratio": 2.669679587108131,
+            "training_reference_per_group": {
+              "H1975": 0.5530943312095051,
+              "HCC2935": 0.5696423215315813,
+              "HCC827": 0.5558170186112394
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 1.3959139520431567,
+            "mean_rms_train_group_vs_other_train_centroids": 0.5679182162385225,
+            "heldout_to_training_reference_ratio": 2.457948894981176,
+            "training_reference_per_group": {
+              "H1975": 0.549844921534065,
+              "HCC2935": 0.6277788687733089,
+              "HCC827": 0.5261308584081934
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 77,
+            "fraction_of_selected": 0.154,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 14.834235294117647,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 84,
+            "fraction_of_selected": 0.168,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 15.518892307692308,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 121,
+            "fraction_of_selected": 0.242,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 13.971621794871794,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      }
+    },
+    "stable": {
+      "H1975": {
+        "selection_sha256": "d6639c523705974080c2dbc7266587332e0641c3cbc2cebf33bd8cadf197a2cb",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.7494949494949495,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 1.32246628207652,
+            "mean_rms_train_group_vs_other_train_centroids": 0.942674872379575,
+            "heldout_to_training_reference_ratio": 1.402886955858116,
+            "training_reference_per_group": {
+              "HCC2935": 0.9677809373617713,
+              "HCC827": 0.927366679366141,
+              "PC9": 0.9328770004108126
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.452131449746789,
+            "mean_rms_train_group_vs_other_train_centroids": 0.8575755888141064,
+            "heldout_to_training_reference_ratio": 1.6932984901714154,
+            "training_reference_per_group": {
+              "HCC2935": 0.8418973030703184,
+              "HCC827": 0.838192582347617,
+              "PC9": 0.8926368810243839
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 1.393581593724787,
+            "mean_rms_train_group_vs_other_train_centroids": 0.8753449062189921,
+            "heldout_to_training_reference_ratio": 1.5920371316768063,
+            "training_reference_per_group": {
+              "HCC2935": 0.8909331100311396,
+              "HCC827": 0.844545358846989,
+              "PC9": 0.8905562497788478
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 18,
+            "fraction_of_selected": 0.036,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 3.4677433155080215,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 33,
+            "fraction_of_selected": 0.066,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 6.096707692307692,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 43,
+            "fraction_of_selected": 0.086,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 4.965121794871794,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      },
+      "HCC2935": {
+        "selection_sha256": "7a2f7af179e023cc8cdff56af20ec27907990419fcd1c115073a028410192d78",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.8611670020120724,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 1.8808985991841816,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9709958545409677,
+            "heldout_to_training_reference_ratio": 1.93708200749566,
+            "training_reference_per_group": {
+              "H1975": 0.9181984330909224,
+              "HCC827": 0.977751161972578,
+              "PC9": 1.0170379685594024
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.8395338358065647,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9606647799499939,
+            "heldout_to_training_reference_ratio": 1.9148550818135741,
+            "training_reference_per_group": {
+              "H1975": 0.955425194131874,
+              "HCC827": 0.8912892625095827,
+              "PC9": 1.0352798832085253
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 1.8619850303613068,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9301606545480773,
+            "heldout_to_training_reference_ratio": 2.0017886386152943,
+            "training_reference_per_group": {
+              "H1975": 0.9288464876584178,
+              "HCC827": 0.873786857088127,
+              "PC9": 0.9878486188976868
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 13,
+            "fraction_of_selected": 0.026,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 2.50448128342246,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 19,
+            "fraction_of_selected": 0.038,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 3.510225641025641,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 29,
+            "fraction_of_selected": 0.058,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 3.3485705128205123,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      },
+      "HCC827": {
+        "selection_sha256": "5627966068495189f2b8c518d5c98cc92d8f5c29e18e84ce5e5961470e6e29f2",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.7520161290322581,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 1.5442696679710226,
+            "mean_rms_train_group_vs_other_train_centroids": 0.957178045576527,
+            "heldout_to_training_reference_ratio": 1.6133567575099144,
+            "training_reference_per_group": {
+              "H1975": 0.8936978059810209,
+              "HCC2935": 0.9875731192292209,
+              "PC9": 0.9902632115193392
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 1.6516162406865305,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9481793133301241,
+            "heldout_to_training_reference_ratio": 1.7418817490183878,
+            "training_reference_per_group": {
+              "H1975": 0.9296063685190171,
+              "HCC2935": 0.904294627046224,
+              "PC9": 1.0106369444251309
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 1.4761897594488682,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9655386038473686,
+            "heldout_to_training_reference_ratio": 1.5288769952508527,
+            "training_reference_per_group": {
+              "H1975": 0.9328450297604081,
+              "HCC2935": 0.9530101041195284,
+              "PC9": 1.0107606776621694
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 16,
+            "fraction_of_selected": 0.032,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 3.082438502673797,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 11,
+            "fraction_of_selected": 0.022,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 2.0322358974358976,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 23,
+            "fraction_of_selected": 0.046,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 2.65576282051282,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      },
+      "PC9": {
+        "selection_sha256": "8f5edcd82a4bea031fb69a1eca43a0679db72ef987c3acbd5c919d3f849c804f",
+        "train_samples": 27,
+        "heldout_samples": 9,
+        "DTP_Acute_heldout_direction_agreement": 0.771255060728745,
+        "state_conditional_shift": {
+          "Control": {
+            "rms_heldout_vs_training_state_centroid": 2.1219609192290196,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9714077708449453,
+            "heldout_to_training_reference_ratio": 2.1844183080636728,
+            "training_reference_per_group": {
+              "H1975": 0.9658939673606706,
+              "HCC2935": 1.019925410229125,
+              "HCC827": 0.9284039349450406
+            },
+            "heldout_sample_count": 3
+          },
+          "Acute": {
+            "rms_heldout_vs_training_state_centroid": 2.2684398554803593,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9018588192562461,
+            "heldout_to_training_reference_ratio": 2.5152937544605027,
+            "training_reference_per_group": {
+              "H1975": 0.9143449516986494,
+              "HCC2935": 0.9045463875080378,
+              "HCC827": 0.8866851185620511
+            },
+            "heldout_sample_count": 3
+          },
+          "DTP": {
+            "rms_heldout_vs_training_state_centroid": 2.294228895613151,
+            "mean_rms_train_group_vs_other_train_centroids": 0.9093209662034137,
+            "heldout_to_training_reference_ratio": 2.5230133043033076,
+            "training_reference_per_group": {
+              "H1975": 0.9241845755092317,
+              "HCC2935": 0.9470459342909805,
+              "HCC827": 0.8567323888100291
+            },
+            "heldout_sample_count": 3
+          }
+        },
+        "cell_cycle_annotation": {
+          "HALLMARK_G2M_CHECKPOINT": {
+            "overlap_gene_count": 11,
+            "fraction_of_selected": 0.022,
+            "expected_count_if_random": 5.19069560872703,
+            "observed_to_expected": 2.1191764705882354,
+            "background_fraction": 0.01038139121745406
+          },
+          "HALLMARK_E2F_TARGETS": {
+            "overlap_gene_count": 13,
+            "fraction_of_selected": 0.026,
+            "expected_count_if_random": 5.412757452950647,
+            "observed_to_expected": 2.4017333333333335,
+            "background_fraction": 0.010825514905901293
+          },
+          "G2M_OR_E2F_UNION": {
+            "overlap_gene_count": 20,
+            "fraction_of_selected": 0.04,
+            "expected_count_if_random": 8.660411924721036,
+            "observed_to_expected": 2.309358974358974,
+            "background_fraction": 0.01732082384944207
+          }
+        }
+      }
+    }
+  }
+}
