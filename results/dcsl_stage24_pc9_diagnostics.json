@@ -1,0 +1,1021 @@
+{
+  "analysis": "stage24_posthoc_PC9_failure_diagnostics",
+  "source": "GSE193258",
+  "held_out_cell_line": "PC9",
+  "train_samples": 27,
+  "heldout_PC9_samples": 9,
+  "input_sha256": {
+    "gse193258_common_log2tpm.tsv.gz": "a211a9eacda83f4797713bb43ce7ffe0e2aa7205e8676ac36c167863626578a0",
+    "gse255958_common_log2tpm_candidate.tsv.gz": "e7c6a01cc20c83624e5eea7f4d585246870d2169d541a69f02e484f7b331f73b",
+    "samples.csv": "ccc55e01786e70c078bc32b45733a4f5a5c5bef95216eb962da7cae9028e9e33"
+  },
+  "configs": [
+    "ANOVA_CE",
+    "Stable_CE",
+    "ANOVA_Stability",
+    "DCSL"
+  ],
+  "parameters_unchanged_since_stage23": {
+    "features": 500,
+    "l2": 0.1,
+    "gamma": 0.05,
+    "tau": 0.5
+  },
+  "heldout_labels_used_only_for_posthoc_diagnostics": true,
+  "no_tuning_performed": true,
+  "PC9_data_never_enter_fit_feature_ranking_or_scaler": true,
+  "notes": [
+    "Held-out labels were previously inspected; exploratory diagnosis, not new validation.",
+    "DTP–Acute scores are logit differences, not calibrated probabilities or causal effects.",
+    "Feature contributions depend on training-fold scaling and are not stable biomarker estimates.",
+    "The contrast on held-out PC9 uses labels ONLY after model fitting, never for selection or tuning.",
+    "Original stage-23 predictions and selected-feature hashes are verified exactly.",
+    "The original data labels and expression-scale harmonization remain provisional."
+  ],
+  "models": {
+    "ANOVA_CE": {
+      "reproduces_stage23_PC9_predictions_and_features": true,
+      "feature_hash": "6ceba0dd2277ba1740008919767e02ee7ad3d892cbd2ba66193b2230f4b5f2b3",
+      "heldout_PC9_DTP_recall": 0.0,
+      "heldout_PC9_samples": [
+        {
+          "gsm": "GSM5778047",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -9.467546592736873,
+          "DTP_probability": 7.73101333080338e-05,
+          "DTP_minus_Control_logit": 0.22703684142866054
+        },
+        {
+          "gsm": "GSM5778048",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -12.356665083528592,
+          "DTP_probability": 4.3009696254227595e-06,
+          "DTP_minus_Control_logit": 1.8417277415896267
+        },
+        {
+          "gsm": "GSM5778049",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -8.505260069849495,
+          "DTP_probability": 0.00020233315297120424,
+          "DTP_minus_Control_logit": 0.42342416533734717
+        },
+        {
+          "gsm": "GSM5778041",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 1.0707512496214138,
+          "DTP_probability": 0.0001089636305778728,
+          "DTP_minus_Control_logit": -9.12435007411597
+        },
+        {
+          "gsm": "GSM5778042",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 0.27049336300455895,
+          "DTP_probability": 0.0002770673247770815,
+          "DTP_minus_Control_logit": -8.190761441716578
+        },
+        {
+          "gsm": "GSM5778043",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 1.142847693529487,
+          "DTP_probability": 0.00011531839308811078,
+          "DTP_minus_Control_logit": -9.067661513564234
+        },
+        {
+          "gsm": "GSM5778050",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -0.498141549542205,
+          "DTP_probability": 0.3724345684992218,
+          "DTP_minus_Control_logit": 3.234615317548987
+        },
+        {
+          "gsm": "GSM5778051",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -0.5658850764955096,
+          "DTP_probability": 0.3571178753009113,
+          "DTP_minus_Control_logit": 3.2393297525580347
+        },
+        {
+          "gsm": "GSM5778052",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -0.02684899807444796,
+          "DTP_probability": 0.487497894726852,
+          "DTP_minus_Control_logit": 3.726447172825297
+        }
+      ],
+      "contrast_diagnostics": {
+        "training_cell_lines": [
+          "H1975",
+          "HCC2935",
+          "HCC827"
+        ],
+        "train_DTP_minus_Acute_group_margins": [
+          9.809345494097306,
+          12.00965128615735,
+          10.341656974741584
+        ],
+        "train_group_margin_mean": 10.72021791833208,
+        "train_group_margin_variance": 0.8785451237682266,
+        "heldout_PC9_mean_DTP_minus_Acute_margin_difference": 9.746198707334266,
+        "selected_genes_same_direction_in_PC9_fraction": 0.8496993987975952,
+        "sign_comparable_feature_count": 499,
+        "posthoc_feature_contributions": {
+          "most_negative": [
+            {
+              "gene_id": "FUT2",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.6020254532819824,
+              "DTP_minus_Acute_weight": -0.10760934555590579,
+              "contrast_contribution": -0.06478356503567166
+            },
+            {
+              "gene_id": "MXRA7",
+              "feature_contrast_PC9_DTP_minus_Acute": -0.5908118088967811,
+              "DTP_minus_Acute_weight": 0.08575040967777538,
+              "contrast_contribution": -0.05066235465536651
+            },
+            {
+              "gene_id": "CPSF3",
+              "feature_contrast_PC9_DTP_minus_Acute": -0.8929397803242028,
+              "DTP_minus_Acute_weight": 0.040489984862773276,
+              "contrast_contribution": -0.036155118188695066
+            },
+            {
+              "gene_id": "ACYP1",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.9450821708855097,
+              "DTP_minus_Acute_weight": -0.026108295978311928,
+              "contrast_contribution": -0.02467448504130446
+            },
+            {
+              "gene_id": "HMCES",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.596238182553312,
+              "DTP_minus_Acute_weight": -0.03849440747882611,
+              "contrast_contribution": -0.0229518355536419
+            },
+            {
+              "gene_id": "MCM7",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.215264568213759,
+              "DTP_minus_Acute_weight": -0.018799679673621547,
+              "contrast_contribution": -0.022846584601120674
+            },
+            {
+              "gene_id": "FOXM1",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.6305436527358961,
+              "DTP_minus_Acute_weight": -0.03192294329600168,
+              "contrast_contribution": -0.020128809271941783
+            },
+            {
+              "gene_id": "TTLL3",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.5540819302905666,
+              "DTP_minus_Acute_weight": -0.035213402040418,
+              "contrast_contribution": -0.019511109774652584
+            },
+            {
+              "gene_id": "SUMO3",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.1017678505541226,
+              "DTP_minus_Acute_weight": -0.01651878924373256,
+              "contrast_contribution": -0.018199870918823784
+            },
+            {
+              "gene_id": "NAA50",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.2779133893600894,
+              "DTP_minus_Acute_weight": -0.013780977187168442,
+              "contrast_contribution": -0.017610895265948494
+            }
+          ],
+          "most_positive": [
+            {
+              "gene_id": "NPR3",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3389141065842267,
+              "DTP_minus_Acute_weight": 0.10396732630676601,
+              "contrast_contribution": 0.3471379724295064
+            },
+            {
+              "gene_id": "CRK",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.9567360731743855,
+              "DTP_minus_Acute_weight": 0.0942996383033245,
+              "contrast_contribution": 0.18451950395541206
+            },
+            {
+              "gene_id": "C4orf46",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.4816956052095795,
+              "DTP_minus_Acute_weight": 0.06293285898678462,
+              "contrast_contribution": 0.15618019957077758
+            },
+            {
+              "gene_id": "KIAA1191",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.8640990117374825,
+              "DTP_minus_Acute_weight": 0.05381475598901696,
+              "contrast_contribution": 0.15413078944503725
+            },
+            {
+              "gene_id": "CASP8AP2",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.6052576703934944,
+              "DTP_minus_Acute_weight": 0.05907558686961178,
+              "contrast_contribution": 0.15390712582505328
+            },
+            {
+              "gene_id": "IGF2R",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.9718426281882253,
+              "DTP_minus_Acute_weight": 0.07496745878889827,
+              "contrast_contribution": 0.14782403096689362
+            },
+            {
+              "gene_id": "DNAJC1",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.7003097608872146,
+              "DTP_minus_Acute_weight": 0.08108634915310424,
+              "contrast_contribution": 0.13787191093973186
+            },
+            {
+              "gene_id": "GGT7",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3667134171638144,
+              "DTP_minus_Acute_weight": 0.03995118482742749,
+              "contrast_contribution": 0.13450418999009153
+            },
+            {
+              "gene_id": "TRAFD1",
+              "feature_contrast_PC9_DTP_minus_Acute": -2.338733884901383,
+              "DTP_minus_Acute_weight": -0.057489835957307764,
+              "contrast_contribution": 0.1344534273907776
+            },
+            {
+              "gene_id": "SERPING1",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.669422879329534,
+              "DTP_minus_Acute_weight": 0.0781328626631909,
+              "contrast_contribution": 0.1304367885574432
+            }
+          ]
+        },
+        "contribution_sum_matches_heldout_margin_difference": true
+      }
+    },
+    "Stable_CE": {
+      "reproduces_stage23_PC9_predictions_and_features": true,
+      "feature_hash": "8f5edcd82a4bea031fb69a1eca43a0679db72ef987c3acbd5c919d3f849c804f",
+      "heldout_PC9_DTP_recall": 0.0,
+      "heldout_PC9_samples": [
+        {
+          "gsm": "GSM5778047",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -10.245487479661282,
+          "DTP_probability": 3.5503494941993845e-05,
+          "DTP_minus_Control_logit": -2.3063027517440338
+        },
+        {
+          "gsm": "GSM5778048",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -11.372906242448336,
+          "DTP_probability": 1.1502425881198201e-05,
+          "DTP_minus_Control_logit": -1.1085726868625523
+        },
+        {
+          "gsm": "GSM5778049",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -9.652242714032736,
+          "DTP_probability": 6.424818166034815e-05,
+          "DTP_minus_Control_logit": -1.9465854655538257
+        },
+        {
+          "gsm": "GSM5778041",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 2.5903879652395903,
+          "DTP_probability": 0.0018058742369150903,
+          "DTP_minus_Control_logit": -6.314767277465155
+        },
+        {
+          "gsm": "GSM5778042",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 1.2749069054746216,
+          "DTP_probability": 0.002343063316706514,
+          "DTP_minus_Control_logit": -6.053293744774523
+        },
+        {
+          "gsm": "GSM5778043",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 2.7301079466497606,
+          "DTP_probability": 0.0022278383952550524,
+          "DTP_minus_Control_logit": -6.1043475520325945
+        },
+        {
+          "gsm": "GSM5778050",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -2.9492245093968212,
+          "DTP_probability": 0.048664168597587855,
+          "DTP_minus_Control_logit": 0.7811983591347259
+        },
+        {
+          "gsm": "GSM5778051",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -3.8614173471152595,
+          "DTP_probability": 0.020268021651962512,
+          "DTP_minus_Control_logit": 0.21550699466907597
+        },
+        {
+          "gsm": "GSM5778052",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -3.0926812976271507,
+          "DTP_probability": 0.04273008126773887,
+          "DTP_minus_Control_logit": 1.0033942517402563
+        }
+      ],
+      "contrast_diagnostics": {
+        "training_cell_lines": [
+          "H1975",
+          "HCC2935",
+          "HCC827"
+        ],
+        "train_DTP_minus_Acute_group_margins": [
+          13.799057414988523,
+          14.766410796395707,
+          13.727827218450487
+        ],
+        "train_group_margin_mean": 14.097765143278238,
+        "train_group_margin_variance": 0.22438912819958381,
+        "heldout_PC9_mean_DTP_minus_Acute_margin_difference": 7.122437760667707,
+        "selected_genes_same_direction_in_PC9_fraction": 0.771255060728745,
+        "sign_comparable_feature_count": 494,
+        "posthoc_feature_contributions": {
+          "most_negative": [
+            {
+              "gene_id": "IMPA2",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.2079912328779043,
+              "DTP_minus_Acute_weight": -0.036674001552719965,
+              "contrast_contribution": -0.08097587390295634
+            },
+            {
+              "gene_id": "ZNF528",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3790484876385367,
+              "DTP_minus_Acute_weight": -0.023774128759298782,
+              "contrast_contribution": -0.0803339338290324
+            },
+            {
+              "gene_id": "PCDH15",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.7613230484406612,
+              "DTP_minus_Acute_weight": -0.021188799604528054,
+              "contrast_contribution": -0.05850912071677368
+            },
+            {
+              "gene_id": "C2",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.592546994555342,
+              "DTP_minus_Acute_weight": -0.03176166490499586,
+              "contrast_contribution": -0.05058194398652504
+            },
+            {
+              "gene_id": "MPP7",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.3367538946723396,
+              "DTP_minus_Acute_weight": -0.01466696664818905,
+              "contrast_contribution": -0.03427309143818507
+            },
+            {
+              "gene_id": "MEPCE",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.1451165977449784,
+              "DTP_minus_Acute_weight": -0.027177454299968783,
+              "contrast_contribution": -0.031121354003349887
+            },
+            {
+              "gene_id": "ELN",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.7488387320101038,
+              "DTP_minus_Acute_weight": -0.0110677952633249,
+              "contrast_contribution": -0.030423584297785453
+            },
+            {
+              "gene_id": "ITGB2",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.1751165436988438,
+              "DTP_minus_Acute_weight": -0.0257805967165725,
+              "contrast_contribution": -0.030295205708072436
+            },
+            {
+              "gene_id": "NKPD1",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.3053015310019342,
+              "DTP_minus_Acute_weight": -0.021011025345608513,
+              "contrast_contribution": -0.027425723551543237
+            },
+            {
+              "gene_id": "VPREB3",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.034976903485859,
+              "DTP_minus_Acute_weight": -0.026054588042051505,
+              "contrast_contribution": -0.026965896853362155
+            }
+          ],
+          "most_positive": [
+            {
+              "gene_id": "NPR3",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3389141065842267,
+              "DTP_minus_Acute_weight": 0.03972534833945974,
+              "contrast_contribution": 0.1326395259595944
+            },
+            {
+              "gene_id": "CBX1",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.617898519823827,
+              "DTP_minus_Acute_weight": 0.04212720963748111,
+              "contrast_contribution": 0.11028475975426985
+            },
+            {
+              "gene_id": "CEP126",
+              "feature_contrast_PC9_DTP_minus_Acute": -2.370994350757967,
+              "DTP_minus_Acute_weight": -0.040992921263718965,
+              "contrast_contribution": 0.09719398473734381
+            },
+            {
+              "gene_id": "GIPC2",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.7865235350903115,
+              "DTP_minus_Acute_weight": 0.031473401128450686,
+              "contrast_contribution": 0.0877013729737658
+            },
+            {
+              "gene_id": "KBTBD6",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.49060700366208,
+              "DTP_minus_Acute_weight": 0.03470900258385233,
+              "contrast_contribution": 0.08644648492546786
+            },
+            {
+              "gene_id": "SRI",
+              "feature_contrast_PC9_DTP_minus_Acute": -3.276556908833007,
+              "DTP_minus_Acute_weight": -0.02583474749127878,
+              "contrast_contribution": 0.08464902038050567
+            },
+            {
+              "gene_id": "KLHL11",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.3693800314362137,
+              "DTP_minus_Acute_weight": 0.03500698711178073,
+              "contrast_contribution": 0.08294485622339814
+            },
+            {
+              "gene_id": "FBXO42",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.0183348247647213,
+              "DTP_minus_Acute_weight": 0.04010164875976424,
+              "contrast_contribution": 0.08093855422231516
+            },
+            {
+              "gene_id": "C4orf46",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.4816956052095795,
+              "DTP_minus_Acute_weight": 0.03129371406746069,
+              "contrast_contribution": 0.07766147267190239
+            },
+            {
+              "gene_id": "CSF2RB",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.0994549064693544,
+              "DTP_minus_Acute_weight": 0.035039926944816634,
+              "contrast_contribution": 0.07356474654662301
+            }
+          ]
+        },
+        "contribution_sum_matches_heldout_margin_difference": true
+      }
+    },
+    "ANOVA_Stability": {
+      "reproduces_stage23_PC9_predictions_and_features": true,
+      "feature_hash": "6ceba0dd2277ba1740008919767e02ee7ad3d892cbd2ba66193b2230f4b5f2b3",
+      "heldout_PC9_DTP_recall": 0.0,
+      "heldout_PC9_samples": [
+        {
+          "gsm": "GSM5778047",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -9.253780079927333,
+          "DTP_probability": 9.573361853313759e-05,
+          "DTP_minus_Control_logit": 0.3840508814368171
+        },
+        {
+          "gsm": "GSM5778048",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -12.022463492506152,
+          "DTP_probability": 6.007689927605678e-06,
+          "DTP_minus_Control_logit": 2.0746945839839253
+        },
+        {
+          "gsm": "GSM5778049",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -8.376403549451581,
+          "DTP_probability": 0.00023015238992440991,
+          "DTP_minus_Control_logit": 0.5324675505521608
+        },
+        {
+          "gsm": "GSM5778041",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 1.3945692113191654,
+          "DTP_probability": 0.00011792546329578751,
+          "DTP_minus_Control_logit": -9.04531062535764
+        },
+        {
+          "gsm": "GSM5778042",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 0.4675986921416784,
+          "DTP_probability": 0.000284124079038007,
+          "DTP_minus_Control_logit": -8.165637281174241
+        },
+        {
+          "gsm": "GSM5778043",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 1.4903822649338037,
+          "DTP_probability": 0.0001252076275625337,
+          "DTP_minus_Control_logit": -8.985383751143011
+        },
+        {
+          "gsm": "GSM5778050",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -0.8754404040924311,
+          "DTP_probability": 0.29022511705301535,
+          "DTP_minus_Control_logit": 3.0863320680584945
+        },
+        {
+          "gsm": "GSM5778051",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -1.0114881510277858,
+          "DTP_probability": 0.2634291145166549,
+          "DTP_minus_Control_logit": 3.0705055424447307
+        },
+        {
+          "gsm": "GSM5778052",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -0.4920607237847887,
+          "DTP_probability": 0.3752835187034807,
+          "DTP_minus_Control_logit": 3.5415422511936763
+        }
+      ],
+      "contrast_diagnostics": {
+        "training_cell_lines": [
+          "H1975",
+          "HCC2935",
+          "HCC827"
+        ],
+        "train_DTP_minus_Acute_group_margins": [
+          10.379254443017967,
+          10.423887012518499,
+          10.392895767547468
+        ],
+        "train_group_margin_mean": 10.398679074361311,
+        "train_group_margin_variance": 0.00034873436222149164,
+        "heldout_PC9_mean_DTP_minus_Acute_margin_difference": 9.091219280993352,
+        "selected_genes_same_direction_in_PC9_fraction": 0.8496993987975952,
+        "sign_comparable_feature_count": 499,
+        "posthoc_feature_contributions": {
+          "most_negative": [
+            {
+              "gene_id": "FUT2",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.6020254532819824,
+              "DTP_minus_Acute_weight": -0.10840310795701566,
+              "contrast_contribution": -0.06526143020499803
+            },
+            {
+              "gene_id": "MXRA7",
+              "feature_contrast_PC9_DTP_minus_Acute": -0.5908118088967811,
+              "DTP_minus_Acute_weight": 0.0922151061814453,
+              "contrast_contribution": -0.054481773690668436
+            },
+            {
+              "gene_id": "CPSF3",
+              "feature_contrast_PC9_DTP_minus_Acute": -0.8929397803242028,
+              "DTP_minus_Acute_weight": 0.048083611670221814,
+              "contrast_contribution": -0.042935769642002145
+            },
+            {
+              "gene_id": "ACYP1",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.9450821708855097,
+              "DTP_minus_Acute_weight": -0.03479141209943322,
+              "contrast_contribution": -0.032880743275104735
+            },
+            {
+              "gene_id": "DCK",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.046888958862866,
+              "DTP_minus_Acute_weight": -0.014470308400681559,
+              "contrast_contribution": -0.02961911449669566
+            },
+            {
+              "gene_id": "HMCES",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.596238182553312,
+              "DTP_minus_Acute_weight": -0.04564661406433759,
+              "contrast_contribution": -0.027216254209433095
+            },
+            {
+              "gene_id": "TIMELESS",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.9137907956389437,
+              "DTP_minus_Acute_weight": -0.025382215655811842,
+              "contrast_contribution": -0.023194035039203555
+            },
+            {
+              "gene_id": "MCM7",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.215264568213759,
+              "DTP_minus_Acute_weight": -0.018983748148643093,
+              "contrast_contribution": -0.023070276496939497
+            },
+            {
+              "gene_id": "FOXM1",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.6305436527358961,
+              "DTP_minus_Acute_weight": -0.03650346971332608,
+              "contrast_contribution": -0.02301703113057478
+            },
+            {
+              "gene_id": "STAT2",
+              "feature_contrast_PC9_DTP_minus_Acute": 0.6860543000408565,
+              "DTP_minus_Acute_weight": -0.03142507304150926,
+              "contrast_contribution": -0.021559306489225424
+            }
+          ],
+          "most_positive": [
+            {
+              "gene_id": "NPR3",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3389141065842267,
+              "DTP_minus_Acute_weight": 0.10325722055160585,
+              "contrast_contribution": 0.34476699030643554
+            },
+            {
+              "gene_id": "CRK",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.9567360731743855,
+              "DTP_minus_Acute_weight": 0.09353702671083136,
+              "contrast_contribution": 0.18302727434255978
+            },
+            {
+              "gene_id": "CASP8AP2",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.6052576703934944,
+              "DTP_minus_Acute_weight": 0.06393634495117091,
+              "contrast_contribution": 0.1665706531009624
+            },
+            {
+              "gene_id": "TRAFD1",
+              "feature_contrast_PC9_DTP_minus_Acute": -2.338733884901383,
+              "DTP_minus_Acute_weight": -0.06777133311938002,
+              "contrast_contribution": 0.1584991131912334
+            },
+            {
+              "gene_id": "GGT7",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3667134171638144,
+              "DTP_minus_Acute_weight": 0.04489087764510498,
+              "contrast_contribution": 0.15113472007603407
+            },
+            {
+              "gene_id": "C4orf46",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.4816956052095795,
+              "DTP_minus_Acute_weight": 0.060601353715933226,
+              "contrast_contribution": 0.15039411318658272
+            },
+            {
+              "gene_id": "IGF2R",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.9718426281882253,
+              "DTP_minus_Acute_weight": 0.07357281946354854,
+              "contrast_contribution": 0.14507402169422137
+            },
+            {
+              "gene_id": "KIAA1191",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.8640990117374825,
+              "DTP_minus_Acute_weight": 0.0494930486305727,
+              "contrast_contribution": 0.14175299167069844
+            },
+            {
+              "gene_id": "SERPING1",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.669422879329534,
+              "DTP_minus_Acute_weight": 0.08079293042984269,
+              "contrast_contribution": 0.1348775665476587
+            },
+            {
+              "gene_id": "PUS7",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.501271700489582,
+              "DTP_minus_Acute_weight": 0.051595467030750713,
+              "contrast_contribution": 0.12905428155756
+            }
+          ]
+        },
+        "contribution_sum_matches_heldout_margin_difference": true
+      }
+    },
+    "DCSL": {
+      "reproduces_stage23_PC9_predictions_and_features": true,
+      "feature_hash": "8f5edcd82a4bea031fb69a1eca43a0679db72ef987c3acbd5c919d3f849c804f",
+      "heldout_PC9_DTP_recall": 0.0,
+      "heldout_PC9_samples": [
+        {
+          "gsm": "GSM5778047",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -9.91731639742638,
+          "DTP_probability": 4.929206669193746e-05,
+          "DTP_minus_Control_logit": -2.046679303163639
+        },
+        {
+          "gsm": "GSM5778048",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -10.894298113510159,
+          "DTP_probability": 1.8562694477446853e-05,
+          "DTP_minus_Control_logit": -0.7673914556220955
+        },
+        {
+          "gsm": "GSM5778049",
+          "true_state": "Acute",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -9.327894024821822,
+          "DTP_probability": 8.885858590546306e-05,
+          "DTP_minus_Control_logit": -1.6895033745585508
+        },
+        {
+          "gsm": "GSM5778041",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 2.9726690476332323,
+          "DTP_probability": 0.0022273243950911865,
+          "DTP_minus_Control_logit": -6.104610202673687
+        },
+        {
+          "gsm": "GSM5778042",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 1.6509799095658604,
+          "DTP_probability": 0.00290766524237191,
+          "DTP_minus_Control_logit": -5.836933288007213
+        },
+        {
+          "gsm": "GSM5778043",
+          "true_state": "Control",
+          "predicted_state": "Control",
+          "DTP_minus_Acute_logit": 3.1265093705648623,
+          "DTP_probability": 0.00277365303100202,
+          "DTP_minus_Control_logit": -5.884690509230361
+        },
+        {
+          "gsm": "GSM5778050",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -2.9753372458088307,
+          "DTP_probability": 0.04756746936604204,
+          "DTP_minus_Control_logit": 0.8520496188428395
+        },
+        {
+          "gsm": "GSM5778051",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -3.7888198760521057,
+          "DTP_probability": 0.02178350963187453,
+          "DTP_minus_Control_logit": 0.3537052306234323
+        },
+        {
+          "gsm": "GSM5778052",
+          "true_state": "DTP",
+          "predicted_state": "Acute",
+          "DTP_minus_Acute_logit": -3.1138160008247726,
+          "DTP_probability": 0.04193671009327989,
+          "DTP_minus_Control_logit": 1.0826700145807777
+        }
+      ],
+      "contrast_diagnostics": {
+        "training_cell_lines": [
+          "H1975",
+          "HCC2935",
+          "HCC827"
+        ],
+        "train_DTP_minus_Acute_group_margins": [
+          13.914678808641899,
+          13.936624509273827,
+          13.910806095089447
+        ],
+        "train_group_margin_mean": 13.92070313766839,
+        "train_group_margin_variance": 0.0001292446886090849,
+        "heldout_PC9_mean_DTP_minus_Acute_margin_difference": 6.753845137690882,
+        "selected_genes_same_direction_in_PC9_fraction": 0.771255060728745,
+        "sign_comparable_feature_count": 494,
+        "posthoc_feature_contributions": {
+          "most_negative": [
+            {
+              "gene_id": "ZNF528",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3790484876385367,
+              "DTP_minus_Acute_weight": -0.02992802733555534,
+              "contrast_contribution": -0.10112825550621306
+            },
+            {
+              "gene_id": "IMPA2",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.2079912328779043,
+              "DTP_minus_Acute_weight": -0.041917444676450866,
+              "contrast_contribution": -0.0925533503502481
+            },
+            {
+              "gene_id": "PCDH15",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.7613230484406612,
+              "DTP_minus_Acute_weight": -0.02165879903004611,
+              "contrast_contribution": -0.05980694096321056
+            },
+            {
+              "gene_id": "MPP7",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.3367538946723396,
+              "DTP_minus_Acute_weight": -0.018402902005700546,
+              "contrast_contribution": -0.04300305293509416
+            },
+            {
+              "gene_id": "ELN",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.7488387320101038,
+              "DTP_minus_Acute_weight": -0.01556697467831512,
+              "contrast_contribution": -0.04279110293597313
+            },
+            {
+              "gene_id": "ITGB2",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.1751165436988438,
+              "DTP_minus_Acute_weight": -0.03387821171085532,
+              "contrast_contribution": -0.039810847052357996
+            },
+            {
+              "gene_id": "C2",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.592546994555342,
+              "DTP_minus_Acute_weight": -0.023824336856099443,
+              "contrast_contribution": -0.037941376057455234
+            },
+            {
+              "gene_id": "OR10H2",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.0373599077591336,
+              "DTP_minus_Acute_weight": -0.010905237529478229,
+              "contrast_contribution": -0.033123131256627435
+            },
+            {
+              "gene_id": "MEPCE",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.1451165977449784,
+              "DTP_minus_Acute_weight": -0.028667625609073263,
+              "contrast_contribution": -0.03282777390288879
+            },
+            {
+              "gene_id": "ISG20",
+              "feature_contrast_PC9_DTP_minus_Acute": 1.9739711790884718,
+              "DTP_minus_Acute_weight": -0.01593699325106595,
+              "contrast_contribution": -0.031459165358931666
+            }
+          ],
+          "most_positive": [
+            {
+              "gene_id": "NPR3",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.3389141065842267,
+              "DTP_minus_Acute_weight": 0.0392061260865404,
+              "contrast_contribution": 0.13090588745486958
+            },
+            {
+              "gene_id": "SRI",
+              "feature_contrast_PC9_DTP_minus_Acute": -3.276556908833007,
+              "DTP_minus_Acute_weight": -0.032631737073890464,
+              "contrast_contribution": 0.10691974355667797
+            },
+            {
+              "gene_id": "CBX1",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.617898519823827,
+              "DTP_minus_Acute_weight": 0.03922083049560815,
+              "contrast_contribution": 0.10267615410071379
+            },
+            {
+              "gene_id": "KBTBD6",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.49060700366208,
+              "DTP_minus_Acute_weight": 0.038384857498707764,
+              "contrast_contribution": 0.09560159492085248
+            },
+            {
+              "gene_id": "GIPC2",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.7865235350903115,
+              "DTP_minus_Acute_weight": 0.034068430838085334,
+              "contrast_contribution": 0.09493248433392133
+            },
+            {
+              "gene_id": "CEP126",
+              "feature_contrast_PC9_DTP_minus_Acute": -2.370994350757967,
+              "DTP_minus_Acute_weight": -0.03682089223141491,
+              "contrast_contribution": 0.08730212747055267
+            },
+            {
+              "gene_id": "ALKBH5",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.591279965693183,
+              "DTP_minus_Acute_weight": 0.0333007834323692,
+              "contrast_contribution": 0.08629165295018579
+            },
+            {
+              "gene_id": "TCIRG1",
+              "feature_contrast_PC9_DTP_minus_Acute": -1.6795682222424901,
+              "DTP_minus_Acute_weight": -0.04727019498328269,
+              "contrast_contribution": 0.07939351735312798
+            },
+            {
+              "gene_id": "TTL",
+              "feature_contrast_PC9_DTP_minus_Acute": 2.4837125073749604,
+              "DTP_minus_Acute_weight": 0.03147600152063201,
+              "contrast_contribution": 0.07817733865894701
+            },
+            {
+              "gene_id": "PLD6",
+              "feature_contrast_PC9_DTP_minus_Acute": 3.8521976390693635,
+              "DTP_minus_Acute_weight": 0.02012786987898398,
+              "contrast_contribution": 0.07753653282731744
+            }
+          ]
+        },
+        "contribution_sum_matches_heldout_margin_difference": true
+      }
+    }
+  },
+  "penalty_ablation_diagnostics": {
+    "anova": {
+      "selected_features_identical": true,
+      "train_margin_variance_without_penalty": 0.8785451237682266,
+      "train_margin_variance_with_penalty": 0.00034873436222149164,
+      "heldout_PC9_margin_shift_with_minus_without": [
+        {
+          "gsm": "GSM5778047",
+          "change": 0.2137665128095403
+        },
+        {
+          "gsm": "GSM5778048",
+          "change": 0.33420159102244007
+        },
+        {
+          "gsm": "GSM5778049",
+          "change": 0.12885652039791395
+        },
+        {
+          "gsm": "GSM5778041",
+          "change": 0.3238179616977517
+        },
+        {
+          "gsm": "GSM5778042",
+          "change": 0.19710532913711942
+        },
+        {
+          "gsm": "GSM5778043",
+          "change": 0.34753457140431676
+        },
+        {
+          "gsm": "GSM5778050",
+          "change": -0.37729885455022605
+        },
+        {
+          "gsm": "GSM5778051",
+          "change": -0.4456030745322762
+        },
+        {
+          "gsm": "GSM5778052",
+          "change": -0.46521172571034075
+        }
+      ],
+      "heldout_PC9_DTP_recall_without_penalty": 0.0,
+      "heldout_PC9_DTP_recall_with_penalty": 0.0
+    },
+    "stable": {
+      "selected_features_identical": true,
+      "train_margin_variance_without_penalty": 0.22438912819958381,
+      "train_margin_variance_with_penalty": 0.0001292446886090849,
+      "heldout_PC9_margin_shift_with_minus_without": [
+        {
+          "gsm": "GSM5778047",
+          "change": 0.32817108223490266
+        },
+        {
+          "gsm": "GSM5778048",
+          "change": 0.47860812893817695
+        },
+        {
+          "gsm": "GSM5778049",
+          "change": 0.32434868921091464
+        },
+        {
+          "gsm": "GSM5778041",
+          "change": 0.382281082393642
+        },
+        {
+          "gsm": "GSM5778042",
+          "change": 0.3760730040912388
+        },
+        {
+          "gsm": "GSM5778043",
+          "change": 0.3964014239151017
+        },
+        {
+          "gsm": "GSM5778050",
+          "change": -0.026112736412009507
+        },
+        {
+          "gsm": "GSM5778051",
+          "change": 0.07259747106315384
+        },
+        {
+          "gsm": "GSM5778052",
+          "change": -0.021134703197621896
+        }
+      ],
+      "heldout_PC9_DTP_recall_without_penalty": 0.0,
+      "heldout_PC9_DTP_recall_with_penalty": 0.0
+    }
+  }
+}
